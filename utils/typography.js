@@ -15,16 +15,12 @@ export const DefaultTypography = new Typography({
   bodyFontFamily: ["Georgia", "serif"],
   googleFonts: [
     {
-      name: "Montserrat",
-      styles: ["700"]
+      name: "Fjalla One",
+      styles: ["400"]
     },
     {
-      name: "Merriweather",
-      styles: ["400", "400i", "700", "700i"]
-    },
-    {
-      name: "Mukta",
-      styles: ["200", "400"]
+      name: "Nunito",
+      styles: ["500"]
     }
   ]
 });
