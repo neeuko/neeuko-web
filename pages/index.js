@@ -22,17 +22,7 @@ const App = () => {
 
   return (
     <Layout>
-      <div>
-        <H1>NEEUKO WEB</H1>
-        <TitleBody title="WHAT WE DO">
-          At The Center we work at the intersection of academic research,
-          practical design, and art. It is organized as a structure of three
-          units: a design laboratory, a fabrication lab(FabLab), and a community
-          program(Nuestro Barrio); within those units we provide services in the
-          areas of ideation, validation, research, product development, and
-          commercialization.
-        </TitleBody>
-      </div>
+      <H1>LANDING PAGE</H1>
     </Layout>
   );
 };
