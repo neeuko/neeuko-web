@@ -64,3 +64,25 @@ export const VerticalBtn = ({ text, onClick, activeBtn, transition }) => {
     </button>
   );
 };
+
+export const CTA = props => (
+  <button
+    type="button"
+    onClick={props.onClick}
+    style={{
+      backgroundColor: Colors.blue,
+      border: "none",
+      cursor: "pointer"
+    }}
+  >
+    <H2
+      color={Colors.white}
+      style={{
+        padding: "5pt 20pt",
+        margin: "0"
+      }}
+    >
+      {props.children}
+    </H2>
+  </button>
+);

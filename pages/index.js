@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Layout from "../components/layout";
 import { H1 } from "../lib/typography";
-import { TitleWithBody } from "../components/body-text";
+import { TitleBody } from "../components/body-text";
 // uncomment the imports below if you need to fetch data and use secrets from env
 // import fetch from "isomorphic-unfetch";
 // import getConfig from "next/config";
