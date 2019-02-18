@@ -2,7 +2,7 @@
 /** @type {{title: string}} */
 
 import Head from "next/head";
-import { DefaultNav } from "./navigations";
+import { Hamburger } from "./navigations";
 
 export default ({ children, title = "Neeuko" }) => (
   <div>
@@ -11,7 +11,14 @@ export default ({ children, title = "Neeuko" }) => (
       <meta charSet="utf-8" />
       <meta name="viewport" content="initial-scale=1.0, width=device-width" />
     </Head>
-    <DefaultNav />
-    {children}
+    <Hamburger />
+    <div
+      style={{
+        width: "calc(100% - 54pt)",
+        marginLeft: "44pt"
+      }}
+    >
+      {children}
+    </div>
   </div>
 );
