@@ -21,23 +21,6 @@ const About = () => {
     <Layout>
       <div>
         <TitleBody title="ABOUT">
-          Lorem Ipsum At neeuko we pride ourselves on incorporating design in
-          every aspect of our decision making and production efforts. For us,
-          design is not only about making, is algo about thinking, questioning,
-          and reinventing. Through our design courses we seek to inspire
-          students to think about design as a form of questioning.Proin luctus
-          urna quis risus varius, ut posuere sapien luctus. Suspendisse auctor
-          orci eu elit molestie, nec suscipit justo scelerisque. Cras iaculis
-          rutrum turpis nec blandit. Sed euismod cursus lacus eget mollis.
-          Phasellus dignissim neque tellus, eu tempor ante auctor non. Aliquam
-          hendrerit congue ornare. Morbi cursus orci et nulla faucibus feugiat.
-          In quis mollis mauris. Mauris efficitur ultricies metus quis tempus.
-          Nulla sit amet feugiat nunc, sit amet bibendum augue. Suspendisse
-          potenti. Proin auctor eleifend eros, ac pretium est blandit sit amet.
-          Fusce quis placerat lectus. Suspendisse sit amet lacinia quam. Aenean
-          ut tellus dolor.
-        </TitleBody>
-        <TitleBody title="ABOUT">
           1. The FabLab will be open to the student community and general public
           Mond ay to Friday from 9:00 a.m. to 6:00 p.m. 2. Access will be
           granted to those who demonstrate the ability to operate any of the

@@ -20,4 +20,4 @@ export const DateTitleBody = ({
   </div>
 );
 
-export const TitleOrderedBody = ({ children = "Body", title = "TITLE", })
+// export const TitleOrderedBody = ({ children = "Body", title = "TITLE", })
