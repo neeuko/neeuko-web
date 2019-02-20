@@ -18,7 +18,7 @@ const About = () => {
   });
 
   return (
-    <Layout>
+    <Layout hamburger>
       <div>
         <TitleBody title="ABOUT">
           1. The FabLab will be open to the student community and general public

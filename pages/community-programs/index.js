@@ -18,7 +18,7 @@ const About = () => {
   });
 
   return (
-    <Layout>
+    <Layout hamburger>
       <div>
         <H1>NEEUKO WEB</H1>
         <TitleBody title="WHAT WE DO">

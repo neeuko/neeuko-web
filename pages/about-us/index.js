@@ -19,7 +19,7 @@ const About = () => {
   });
 
   return (
-    <Layout>
+    <Layout hamburger>
       <div>
         <TitleBody title="WHO WE ARE">
           At Sagrado Corazón, The Collaborative Innovation Center: Neeuko has a
