@@ -1,23 +1,110 @@
 import React, { useState, useEffect } from "react";
-import { H1, H2, H3, H4, H5, P } from "../lib/typography";
+import { H1, H2, H3, H4, H5, H6, P } from "../lib/typography";
+import { Colors } from "../lib/colors";
+import { blue } from "ansi-colors";
 
-export const TitleBody = ({ children = "Body", title = "TITLE" }) => (
-  <div>
-    <H3 style={{ textAlign: "center" }}>{title}</H3>
+export const TitleBody = ({
+  children = "Body",
+  display = "inline-block",
+  margin = "auto",
+  padding = "auto",
+  position = "relative",
+  textAlign = "center",
+  title = "TITLE",
+  verticalAlign = "top",
+  width = "100%"
+}) => (
+  <div
+    style={{
+      width: width,
+      display: display,
+      position: position,
+      margin: margin,
+      verticalAlign: verticalAlign,
+      padding: padding
+    }}
+  >
+    <H4 style={{ textAlign: textAlign }}>{title}</H4>
     <P>{children}</P>
   </div>
 );
 
 export const DateTitleBody = ({
   children = "Body",
+  date = "Date",
+  lineHeight = "2",
+  margin = "auto",
+  marginBottom = "0%",
+  marginTop = "0%",
   title = "TITLE",
-  date = "Date"
+  width = "70%"
 }) => (
-  <div>
-    <H5 style={{ textAlign: "left" }}>{date}</H5>
-    <H4 style={{ textAlign: "left" }}>{title}</H4>
+  <div
+    style={{
+      width: width,
+      margin: margin,
+      marginBottom: marginBottom,
+      marginTop: marginTop
+    }}
+  >
+    <H6 style={{ marginBottom: marginBottom, lineHeight: lineHeight }}>
+      {date}
+    </H6>
+    <H5>{title}</H5>
+    <P style={{ marginBottom: marginBottom }}>{children}</P>
+  </div>
+);
+
+export const ImgTitleBody = ({
+  active = false,
+  children = "Body",
+  display = "inline-block",
+  imgUrl = "../static/images/icon.png",
+  margin = "auto",
+  padding = "auto",
+  position = "relative",
+  title = "TITLE",
+  textAlign = "center",
+  width = "100%"
+}) => (
+  <div
+    style={{
+      display: display,
+      margin: margin,
+      padding: padding,
+      position: position,
+      width: width
+    }}
+  >
+    <div style={{ textAlign: "center" }}>
+      <img
+        src={imgUrl}
+        marign="5% auto 2%"
+        width="119pt"
+        style={{
+          border: `1pt solid ${active ? Colors.blue : Colors.black}`
+        }}
+      />
+    </div>
+    <H4 style={{ textAlign: textAlign }}>{title}</H4>
     <P>{children}</P>
   </div>
 );
 
-export const TitleOrderedBody = ({ children = "Body", title = "TITLE", })
+export const TitleSubtitleBodySideImg = ({
+  imgUrl = "../static/images/icon.png",
+  children = "Body",
+  title = "TITLE",
+  subtitle = "SUBTITLE",
+  textAlign = "left",
+  active = false
+}) => (
+  <div>
+    <H4 style={{ textAlign: textAlign }}>{title}</H4>
+    <H6 style={{ textAlign: textAlign }}>{subtitle}</H6>
+    <P>{children}</P>
+    <div>
+      <img src={imgUrl} width="190pt" />
+    </div>
+  </div>
+);
