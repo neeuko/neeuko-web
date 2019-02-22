@@ -3,6 +3,7 @@ import Layout from "../../components/layout";
 import { TitleBody } from "../../components/body-text";
 import { CTA } from "../../components/buttons";
 import { DateTitleBody } from "../../components/body-text";
+import { ThreeImage } from "../../components/image-slider";
 
 const About = () => {
   const [initialized, setInitialized] = useState(false);
@@ -87,6 +88,7 @@ const About = () => {
           interdum, mi odio malesuada mi, at cursus lacus sapien quis velit.
         </DateTitleBody>
       </div>
+      <ThreeImage />
     </Layout>
   );
 };
