@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Layout from "../../components/layout";
-import { TitleBody } from "../../components/body-text";
+import { TitleBody, DateTitleBody } from "../../components/body-text";
 import { CTA } from "../../components/buttons";
-import { DateTitleBody } from "../../components/body-text";
 
 const About = () => {
   const [initialized, setInitialized] = useState(false);
@@ -20,71 +19,159 @@ const About = () => {
 
   return (
     <Layout>
+      {/* Begin 3 grid paragraphs */}
       <div>
-        <TitleBody title="WHO WE ARE">
+        <TitleBody padding="85px 50px" width="33.3%" title="WHO WE ARE">
           At Sagrado Corazón, The Collaborative Innovation Center: Neeuko has a
-          team of mutltidisciplinary design facilitators, technology, and
+          team of multidisciplinary design facilitators, technology, and
           infrastructure that gives visionaries access to product development
-          resources so they can acheive their dreams.
+          resources so they can achieve their dreams.
         </TitleBody>
-        <TitleBody title="WHAT WE DO">
+        <TitleBody padding="85px 50px" width="33.3%" title="WHAT WE DO">
           At The Center we work at the intersection of academic research,
-          practical design, and art. It is orgnized as a structure of three
+          practical design, and art. It is organized as a structure of three
           units: a design laboratory, a fabrication lab(FabLab), and a community
           program(Nuestro Barrio); within those units we provide services in the
           areas of ideation, validation, research, product development, and
           commercialization.
         </TitleBody>
-        <CTA onClick={() => console.log("success!")}>PAPERS & PRESS</CTA>
-        <TitleBody title="OUR PRINCIPLES">
+        <TitleBody padding="85px 50px" width="33.3%" title="OUR PRINCIPLES">
           We are committed to increasing accessibility to design & innovation
           tools and services within our immediate community. To that end we
           pursue challenging design projects with a critical perspective
-          questioning issues of ethic and justice.
+          questioning issues of ethics and justice.
         </TitleBody>
       </div>
+
+      {/* Begins button and image slider */}
+      <div style={{ textAlign: "center" }}>
+        <CTA onClick={() => console.log("success!")}>PAPERS & PRESS</CTA>
+      </div>
+
+      {/* Begin 2 DateTitleBody paragraphs */}
       <div>
         <DateTitleBody
+          marginTop="5%"
           date="FECHA"
           title="TITULO O TEXTO REFERENTE A LA ENTREVISTA"
         >
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus neque
-          nulla, elementum ut viverra ac, dictum sed augue. Sed massa turpis,
-          auctor at quam et, dictum dapibus ex. Curabitur eget purus sit amet
-          lectus finibus tincidunt. Aliquam aliquet faucibus dolor at tempus.
-          Fusce ut leo magna. Curabitur ac tincidunt purus. Mauris pulvinar
-          felis felis, sed tristique ex scelerisque quis. Sed a risus vitae
-          sapien posuere malesuada. Nunc malesuada velit sed ipsum eleifend
-          rutrum. Aenean vestibulum lorem elit, vel euismod leo vehicula ut.
-          Suspendisse sagittis ex et laoreet eleifend. In pretium nunc neque, et
-          ultrices felis condimentum malesuada. Nam mauris tellus, aliquet quis
-          libero ac, bibendum posuere odio. Curabitur faucibus est eget risus
-          facilisis, sit amet mattis lorem tincidunt. Suspendisse iaculis massa
-          a diam consectetur finibus. Sed sagittis ex sed egestas finibus. In
-          venenatis mi vehicula tincidunt fermentum. Nullam in neque nec arcu
-          consequat pellentesque id quis ex. Sed malesuada, eros non accumsan
-          interdum, mi odio malesuada mi, at cursus lacus sapien quis velit.
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus
+            maximus finibus arcu, in porta tortor dignissim non. Aliquam vitae
+            erat ultricies, ornare dolor in, vulputate leo. Cras vel nunc
+            convallis, pretium purus in, sodales ante. Sed ornare velit in est
+            fermentum consectetur. Mauris a ultricies magna. Nulla et augue in
+            leo consectetur vulputate vitae a neque. Nunc eleifend neque libero,
+            sed ultrices ante ullamcorper ut. Duis maximus consectetur nulla,
+            non tincidunt neque feugiat vel. Etiam egestas aliquam neque sed
+            pellentesque. In faucibus ultricies mi vitae tempor. Phasellus
+            convallis sodales convallis. Nunc pellentesque ex vel est feugiat,
+            at scelerisque sem ornare. Phasellus aliquet sed nunc ut euismod.
+            Morbi vitae lacinia ex. Suspendisse eu blandit mauris, quis lacinia
+            libero. In tristique eros varius nibh volutpat, at bibendum sapien
+            tristique.
+          </p>
+          <p>
+            roin luctus urna quis risus varius, ut posuere sapien luctus.
+            Suspendisse auctor orci eu elit molestie, nec suscipit justo
+            scelerisque. Cras iaculis rutrum turpis nec blandit. Sed euismod
+            cursus lacus eget mollis. Phasellus dignissim neque tellus, eu
+            tempor ante auctor non. Aliquam hendrerit congue ornare. Morbi
+            cursus orci et nulla faucibus feugiat. In quis mollis mauris. Mauris
+            efficitur ultricies metus quis tempus. Nulla sit amet feugiat nunc,
+            sit amet bibendum augue. Suspendisse potenti. Proin auctor eleifend
+            eros, ac pretium est blandit sit amet. Fusce quis placerat lectus.
+            Suspendisse sit amet lacinia quam. Aenean ut tellus dolor.
+          </p>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus
+            maximus finibus arcu, in porta tortor dignissim non. Aliquam vitae
+            erat ultricies, ornare dolor in, vulputate leo. Cras vel nunc
+            convallis, pretium purus in, sodales ante. Sed ornare velit in est
+            fermentum consectetur. Mauris a ultricies magna. Nulla et augue in
+            leo consectetur vulputate vitae a neque. Nunc eleifend neque libero,
+            sed ultrices ante ullamcorper ut. Duis maximus consectetur nulla,
+            non tincidunt neque feugiat vel. Etiam egestas aliquam neque sed
+            pellentesque. In faucibus ultricies mi vitae tempor. Phasellus
+            convallis sodales convallis. Nunc pellentesque ex vel est feugiat,
+            at scelerisque sem ornare. Phasellus aliquet sed nunc ut euismod.
+            Morbi vitae lacinia ex. Suspendisse eu blandit mauris, quis lacinia
+            libero. In tristique eros varius nibh volutpat, at bibendum sapien
+            tristique.
+          </p>
+          <p>
+            Proin luctus urna quis risus varius, ut posuere sapien luctus.
+            Suspendisse auctor orci eu elit molestie, nec suscipit justo
+            scelerisque. Cras iaculis rutrum turpis nec blandit. Sed euismod
+            cursus lacus eget mollis. Phasellus dignissim neque tellus, eu
+            tempor ante auctor non. Aliquam hendrerit congue ornare. Morbi
+            cursus orci et nulla faucibus feugiat. In quis mollis mauris. Mauris
+            efficitur ultricies metus quis tempus. Nulla sit amet feugiat nunc,
+            sit amet bibendum augue. Suspendisse potenti. Proin auctor eleifend
+            eros, ac pretium est blandit sit amet. Fusce quis placerat lectus.
+            Suspendisse sit amet lacinia quam. Aenean ut tellus dolor.
+          </p>
         </DateTitleBody>
         <DateTitleBody
           date="FECHA"
           title="TITULO O TEXTO REFERENTE A LA ENTREVISTA"
         >
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus neque
-          nulla, elementum ut viverra ac, dictum sed augue. Sed massa turpis,
-          auctor at quam et, dictum dapibus ex. Curabitur eget purus sit amet
-          lectus finibus tincidunt. Aliquam aliquet faucibus dolor at tempus.
-          Fusce ut leo magna. Curabitur ac tincidunt purus. Mauris pulvinar
-          felis felis, sed tristique ex scelerisque quis. Sed a risus vitae
-          sapien posuere malesuada. Nunc malesuada velit sed ipsum eleifend
-          rutrum. Aenean vestibulum lorem elit, vel euismod leo vehicula ut.
-          Suspendisse sagittis ex et laoreet eleifend. In pretium nunc neque, et
-          ultrices felis condimentum malesuada. Nam mauris tellus, aliquet quis
-          libero ac, bibendum posuere odio. Curabitur faucibus est eget risus
-          facilisis, sit amet mattis lorem tincidunt. Suspendisse iaculis massa
-          a diam consectetur finibus. Sed sagittis ex sed egestas finibus. In
-          venenatis mi vehicula tincidunt fermentum. Nullam in neque nec arcu
-          consequat pellentesque id quis ex. Sed malesuada, eros non accumsan
-          interdum, mi odio malesuada mi, at cursus lacus sapien quis velit.
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus
+            maximus finibus arcu, in porta tortor dignissim non. Aliquam vitae
+            erat ultricies, ornare dolor in, vulputate leo. Cras vel nunc
+            convallis, pretium purus in, sodales ante. Sed ornare velit in est
+            fermentum consectetur. Mauris a ultricies magna. Nulla et augue in
+            leo consectetur vulputate vitae a neque. Nunc eleifend neque libero,
+            sed ultrices ante ullamcorper ut. Duis maximus consectetur nulla,
+            non tincidunt neque feugiat vel. Etiam egestas aliquam neque sed
+            pellentesque. In faucibus ultricies mi vitae tempor. Phasellus
+            convallis sodales convallis. Nunc pellentesque ex vel est feugiat,
+            at scelerisque sem ornare. Phasellus aliquet sed nunc ut euismod.
+            Morbi vitae lacinia ex. Suspendisse eu blandit mauris, quis lacinia
+            libero. In tristique eros varius nibh volutpat, at bibendum sapien
+            tristique.
+          </p>
+          <p>
+            Proin luctus urna quis risus varius, ut posuere sapien luctus.
+            Suspendisse auctor orci eu elit molestie, nec suscipit justo
+            scelerisque. Cras iaculis rutrum turpis nec blandit. Sed euismod
+            cursus lacus eget mollis. Phasellus dignissim neque tellus, eu
+            tempor ante auctor non. Aliquam hendrerit congue ornare. Morbi
+            cursus orci et nulla faucibus feugiat. In quis mollis mauris. Mauris
+            efficitur ultricies metus quis tempus. Nulla sit amet feugiat nunc,
+            sit amet bibendum augue. Suspendisse potenti. Proin auctor eleifend
+            eros, ac pretium est blandit sit amet. Fusce quis placerat lectus.
+            Suspendisse sit amet lacinia quam. Aenean ut tellus dolor.{" "}
+          </p>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus
+            maximus finibus arcu, in porta tortor dignissim non. Aliquam vitae
+            erat ultricies, ornare dolor in, vulputate leo. Cras vel nunc
+            convallis, pretium purus in, sodales ante. Sed ornare velit in est
+            fermentum consectetur. Mauris a ultricies magna. Nulla et augue in
+            leo consectetur vulputate vitae a neque. Nunc eleifend neque libero,
+            sed ultrices ante ullamcorper ut. Duis maximus consectetur nulla,
+            non tincidunt neque feugiat vel. Etiam egestas aliquam neque sed
+            pellentesque. In faucibus ultricies mi vitae tempor. Phasellus
+            convallis sodales convallis. Nunc pellentesque ex vel est feugiat,
+            at scelerisque sem ornare. Phasellus aliquet sed nunc ut euismod.
+            Morbi vitae lacinia ex. Suspendisse eu blandit mauris, quis lacinia
+            libero. In tristique eros varius nibh volutpat, at bibendum sapien
+            tristique.
+          </p>
+          <p style={{ marginBottom: "5%" }}>
+            Proin luctus urna quis risus varius, ut posuere sapien luctus.
+            Suspendisse auctor orci eu elit molestie, nec suscipit justo
+            scelerisque. Cras iaculis rutrum turpis nec blandit. Sed euismod
+            cursus lacus eget mollis. Phasellus dignissim neque tellus, eu
+            tempor ante auctor non. Aliquam hendrerit congue ornare. Morbi
+            cursus orci et nulla faucibus feugiat. In quis mollis mauris. Mauris
+            efficitur ultricies metus quis tempus. Nulla sit amet feugiat nunc,
+            sit amet bibendum augue. Suspendisse potenti. Proin auctor eleifend
+            eros, ac pretium est blandit sit amet. Fusce quis placerat lectus.
+            Suspendisse sit amet lacinia quam. Aenean ut tellus dolor.
+          </p>
         </DateTitleBody>
       </div>
     </Layout>
