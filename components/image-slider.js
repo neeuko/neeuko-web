@@ -61,7 +61,7 @@ export const ThreeImage = props => {
       />
       <div
         style={{
-          width: "50%",
+          width: "55%",
           margin: "auto",
           marginTop: "30pt",
           textAlign: "left"

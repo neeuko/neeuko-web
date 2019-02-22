@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import Layout from "../../components/layout";
 import { TitleBody, DateTitleBody } from "../../components/body-text";
 import { CTA } from "../../components/buttons";
-import { DateTitleBody } from "../../components/body-text";
 import { ThreeImage } from "../../components/image-slider";
 
 const About = () => {
@@ -45,9 +44,11 @@ const About = () => {
       </div>
 
       {/* Begins button and image slider */}
-      <div style={{ textAlign: "center" }}>
+      <div style={{ textAlign: "center", marginBottom: "30pt" }}>
         <CTA onClick={() => console.log("success!")}>PAPERS & PRESS</CTA>
       </div>
+
+      <ThreeImage />
 
       {/* Begin 2 DateTitleBody paragraphs */}
       <div>
@@ -175,7 +176,6 @@ const About = () => {
           </p>
         </DateTitleBody>
       </div>
-      <ThreeImage />
     </Layout>
   );
 };
