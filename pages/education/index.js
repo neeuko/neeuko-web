@@ -21,27 +21,31 @@ const About = () => {
   return (
     <Layout hamburger>
       <div>
-        <TitleBody title="INNOVATION">
+        <TitleBody padding="85px 50px" width="33.3%" title="INNOVATION">
           Innovation is crucial for business development and incredibly
           necessary for the betterment of society. Our innovation courses and
           workshops are neatly designed to teach students and our immediate
           community about how innovation process work and are implemented.
         </TitleBody>
-        <TitleBody title="DESIGN">
+
+        <TitleBody padding="85px 50px" width="33.3%" title="DESIGN">
           At neeuko we pride ourselves on incorporating design in every aspect
           of our decision making and production efforts. For us, design is not
           only about making, is also about thinking, questioning, and
           reinventing. Through our design courses we seek to inspire students to
           think about design as a form of questioning.
         </TitleBody>
-        <CTA onClick={() => console.log("success!")}>WORKSHOPS</CTA>
-        <TitleBody title="ENTREPENEURSHIP">
+
+        <TitleBody padding="85px 50px" width="33.3%" title="ENTREPENEURSHIP">
           Being able to bring products to market can help people achieve
           financial independence. For us ensuring financial independence is
           incredibly important to that end we have models some important
           workshops to ensure that students and the community have a shot at
           undertake a business venture.
         </TitleBody>
+        <div style={{ textAlign: "center" }}>
+          <CTA onClick={() => console.log("success!")}>SERVICES</CTA>
+        </div>
       </div>
     </Layout>
   );
