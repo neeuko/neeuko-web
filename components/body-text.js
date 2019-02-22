@@ -97,14 +97,55 @@ export const TitleSubtitleBodySideImg = ({
   title = "TITLE",
   subtitle = "SUBTITLE",
   textAlign = "left",
+  position = "relative",
+  margin = "auto",
   active = false
 }) => (
-  <div>
-    <H4 style={{ textAlign: textAlign }}>{title}</H4>
-    <H6 style={{ textAlign: textAlign }}>{subtitle}</H6>
-    <P>{children}</P>
-    <div>
-      <img src={imgUrl} width="190pt" />
+  <div
+    style={{
+      width: "100%",
+      position: position,
+      height: "260pt"
+    }}
+  >
+    <div
+      style={{
+        width: "80%",
+        height: "100%",
+        margin: "auto",
+        position: "relative"
+      }}
+    >
+      <div
+        style={{
+          display: "inline-block",
+          width: "60%",
+          height: "100%",
+          position: "absolute",
+          left: "0"
+        }}
+      >
+        <H4 style={{ textAlign: textAlign }}>{title}</H4>
+        <H6 style={{ textAlign: textAlign }}>{subtitle}</H6>
+        <P>{children}</P>
+      </div>
+      <div
+        style={{
+          display: "inline-block",
+          position: "absolute",
+          width: "40%",
+          height: "100%",
+          right: "0"
+        }}
+      >
+        <img
+          src={imgUrl}
+          width="260pt"
+          style={{
+            marginLeft: "20pt"
+          }}
+        />
+      </div>
     </div>
   </div>
 );
