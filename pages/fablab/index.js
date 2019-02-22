@@ -3,6 +3,7 @@ import Layout from "../../components/layout";
 import { H1, H4, P } from "../../lib/typography";
 import { TitleBody, ImgTitleBody } from "../../components/body-text";
 import { CTA } from "../../components/buttons";
+import { ThreeImage } from "../../components/image-slider";
 
 const About = () => {
   const [initialized, setInitialized] = useState(false);
@@ -180,13 +181,13 @@ const About = () => {
           </ol>
         </TitleBody>
       </div>
-      <div style={{ textAlign: "center" }}>
+      <div style={{ textAlign: "center", marginBottom: "30pt" }}>
         <CTA onClick={() => console.log("success!")}>EQUIPMENT COST & USE</CTA>
       </div>
-
+      <ThreeImage style={{ margin: "30pt 0" }} />
       {/* Begin Service button and the ImgTitleBody div */}
 
-      <div style={{ textAlign: "center" }}>
+      <div style={{ textAlign: "center", marginTop: "50pt" }}>
         <CTA onClick={() => console.log("success!")}>SERVICES</CTA>
       </div>
       <div>
