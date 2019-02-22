@@ -1,10 +1,8 @@
 import React, { useState, useEffect } from "react";
 import Layout from "../components/layout";
-import { H1 } from "../lib/typography";
+import { H1, H2 } from "../lib/typography";
+import { Colors } from "../lib/colors";
 import { TitleBody } from "../components/body-text";
-// uncomment the imports below if you need to fetch data and use secrets from env
-// import fetch from "isomorphic-unfetch";
-// import getConfig from "next/config";
 
 const App = () => {
   const [initialized, setInitialized] = useState(false);
@@ -22,23 +20,342 @@ const App = () => {
 
   return (
     <Layout>
-      <H1>LANDING PAGE</H1>
+      <div
+        style={{
+          position: "fixed",
+          top: "0",
+          left: "calc(5% - 6pt)",
+          width: "100%",
+          height: "100%"
+        }}
+      >
+        <div
+          style={{
+            position: "relative",
+            width: "15%",
+            height: "calc(25% - 2pt)",
+            display: "inline-block",
+            margin: "1pt",
+            backgroundColor: Colors.blue,
+            textAlign: "center"
+          }}
+        >
+          <H2
+            color="white"
+            style={{
+              position: "absolute",
+              top: "40%",
+              width: "100%"
+            }}
+          >
+            ABOUT
+          </H2>
+        </div>
+        <div
+          style={{
+            position: "relative",
+            width: "15%",
+            height: "calc(25% - 2pt)",
+            display: "inline-block",
+            margin: "1pt",
+            backgroundColor: Colors.blue
+          }}
+        />
+        <div
+          style={{
+            position: "relative",
+            width: "15%",
+            height: "calc(25% - 2pt)",
+            display: "inline-block",
+            margin: "1pt",
+            backgroundColor: Colors.black,
+            textAlign: "center"
+          }}
+        >
+          <H2
+            color="white"
+            style={{
+              position: "absolute",
+              top: "40%",
+              width: "100%"
+            }}
+          >
+            OUR WORK
+          </H2>
+        </div>
+        <div
+          style={{
+            position: "relative",
+            width: "15%",
+            height: "calc(25% - 2pt)",
+            display: "inline-block",
+            margin: "1pt",
+            backgroundColor: Colors.black
+          }}
+        />
+        <div
+          style={{
+            position: "relative",
+            width: "15%",
+            height: "calc(25% - 2pt)",
+            display: "inline-block",
+            margin: "1pt",
+            backgroundColor: Colors.black
+          }}
+        />
+        <div
+          style={{
+            position: "relative",
+            width: "15%",
+            height: "calc(25% - 2pt)",
+            display: "inline-block",
+            margin: "1pt",
+            backgroundColor: Colors.blue
+          }}
+        />
+        <div
+          style={{
+            position: "relative",
+            width: "15%",
+            height: "calc(25% - 2pt)",
+            display: "inline-block",
+            margin: "1pt",
+            backgroundColor: Colors.grey
+          }}
+        />
+        <div
+          style={{
+            position: "relative",
+            width: "15%",
+            height: "calc(25% - 2pt)",
+            display: "inline-block",
+            margin: "1pt",
+            backgroundColor: Colors.blue
+          }}
+        />
+        <div
+          style={{
+            position: "relative",
+            width: "15%",
+            height: "calc(25% - 2pt)",
+            display: "inline-block",
+            margin: "1pt",
+            backgroundColor: Colors.grey,
+            textAlign: "center"
+          }}
+        >
+          <H2
+            color="white"
+            style={{
+              position: "absolute",
+              top: "40%",
+              width: "100%"
+            }}
+          >
+            FABLAB
+          </H2>
+        </div>
+        <div
+          style={{
+            position: "relative",
+            width: "15%",
+            height: "calc(25% - 2pt)",
+            display: "inline-block",
+            margin: "1pt",
+            backgroundColor: Colors.grey
+          }}
+        />
+        <div
+          style={{
+            position: "relative",
+            width: "15%",
+            height: "calc(25% - 2pt)",
+            display: "inline-block",
+            margin: "1pt",
+            backgroundColor: Colors.blue,
+            textAlign: "center"
+          }}
+        >
+          <H2
+            color="white"
+            style={{
+              position: "absolute",
+              top: "40%",
+              width: "100%"
+            }}
+          >
+            COMMUNITY PROGRAMS
+          </H2>
+        </div>
+        <div
+          style={{
+            position: "relative",
+            width: "15%",
+            height: "calc(25% - 2pt)",
+            display: "inline-block",
+            margin: "1pt",
+            backgroundColor: Colors.blue
+          }}
+        />
+        <div
+          style={{
+            position: "relative",
+            width: "15%",
+            height: "calc(25% - 2pt)",
+            display: "inline-block",
+            margin: "1pt",
+            backgroundColor: Colors.black
+          }}
+        />
+        <div
+          style={{
+            position: "relative",
+            width: "15%",
+            height: "calc(25% - 2pt)",
+            display: "inline-block",
+            margin: "1pt",
+            backgroundColor: Colors.black,
+            textAlign: "center"
+          }}
+        >
+          <H2
+            color="white"
+            style={{
+              position: "absolute",
+              top: "40%",
+              width: "100%"
+            }}
+          >
+            EDUCATION
+          </H2>
+        </div>
+        <div
+          style={{
+            position: "relative",
+            width: "15%",
+            height: "calc(25% - 2pt)",
+            display: "inline-block",
+            margin: "1pt",
+            backgroundColor: Colors.grey
+          }}
+        />
+        <div
+          style={{
+            position: "relative",
+            width: "15%",
+            height: "calc(25% - 2pt)",
+            display: "inline-block",
+            margin: "1pt",
+            backgroundColor: Colors.black
+          }}
+        />
+        <div
+          style={{
+            position: "relative",
+            width: "15%",
+            height: "calc(25% - 2pt)",
+            display: "inline-block",
+            margin: "1pt",
+            backgroundColor: Colors.black,
+            textAlign: "center"
+          }}
+        >
+          <H2
+            color="white"
+            style={{
+              position: "absolute",
+              top: "40%",
+              width: "100%"
+            }}
+          >
+            EVENTS
+          </H2>
+        </div>
+        <div
+          style={{
+            position: "relative",
+            width: "15%",
+            height: "calc(25% - 2pt)",
+            display: "inline-block",
+            margin: "1pt",
+            backgroundColor: Colors.blue
+          }}
+        />
+        <div
+          style={{
+            position: "relative",
+            width: "15%",
+            height: "calc(25% - 2pt)",
+            display: "inline-block",
+            margin: "1pt",
+            backgroundColor: Colors.black
+          }}
+        />
+        <div
+          style={{
+            position: "relative",
+            width: "15%",
+            height: "calc(25% - 2pt)",
+            display: "inline-block",
+            margin: "1pt",
+            backgroundColor: Colors.grey
+          }}
+        />
+        <div
+          style={{
+            position: "relative",
+            width: "15%",
+            height: "calc(25% - 2pt)",
+            display: "inline-block",
+            margin: "1pt",
+            backgroundColor: Colors.grey
+          }}
+        />
+        <div
+          style={{
+            position: "relative",
+            width: "15%",
+            height: "calc(25% - 2pt)",
+            display: "inline-block",
+            margin: "1pt",
+            backgroundColor: Colors.grey
+          }}
+        />
+        <div
+          style={{
+            position: "relative",
+            width: "15%",
+            height: "calc(25% - 2pt)",
+            display: "inline-block",
+            margin: "1pt",
+            backgroundColor: Colors.black
+          }}
+        />
+        <div
+          style={{
+            position: "relative",
+            width: "15%",
+            height: "calc(25% - 2pt)",
+            display: "inline-block",
+            margin: "1pt",
+            backgroundColor: Colors.red,
+            textAlign: "center"
+          }}
+        >
+          <H2
+            color="white"
+            style={{
+              position: "absolute",
+              top: "40%",
+              width: "100%"
+            }}
+          >
+            CONTACT
+          </H2>
+        </div>
+      </div>
     </Layout>
   );
 };
-
-// App.getInitialProps = async function(context) {
-//   const { serverRuntimeConfig, publicRuntimeConfig } = getConfig();
-//   const { id } = context.query;
-//   const url = `${serverRuntimeConfig.mySecret}${id}`;
-//   const options = {
-//     method: "GET"
-//   };
-//   const res = await fetch(url, options);
-//   const data = await res.json();
-//   return {
-//     products: data
-//   };
-// };
 
 export default App;

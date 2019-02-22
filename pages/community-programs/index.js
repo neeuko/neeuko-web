@@ -22,7 +22,7 @@ const About = () => {
   });
 
   return (
-    <Layout>
+    <Layout hamburger>
       <div>
         <TitleBody title="ABOUT">
           Nuestro Barrio es una iniciativa que trabaja para la creación
