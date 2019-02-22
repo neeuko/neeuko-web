@@ -19,7 +19,7 @@ const About = () => {
   });
 
   return (
-    <Layout>
+    <Layout hamburger>
       <div>
         <TitleBody padding="85px 50px" width="33.3%" title="INNOVATION">
           Innovation is crucial for business development and incredibly

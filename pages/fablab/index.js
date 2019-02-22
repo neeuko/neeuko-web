@@ -19,7 +19,7 @@ const About = () => {
   });
 
   return (
-    <Layout>
+    <Layout hamburger>
       <div>
         <TitleBody display="block" width="70%" title="ABOUT">
           Lorem Ipsum At neeuko we pride ourselves on incorporating design in

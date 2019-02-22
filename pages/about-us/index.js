@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import Layout from "../../components/layout";
 import { TitleBody, DateTitleBody } from "../../components/body-text";
 import { CTA } from "../../components/buttons";
+import { DateTitleBody } from "../../components/body-text";
+import { ThreeImage } from "../../components/image-slider";
 
 const About = () => {
   const [initialized, setInitialized] = useState(false);
@@ -18,8 +20,7 @@ const About = () => {
   });
 
   return (
-    <Layout>
-      {/* Begin 3 grid paragraphs */}
+    <Layout hamburger>
       <div>
         <TitleBody padding="85px 50px" width="33.3%" title="WHO WE ARE">
           At Sagrado Corazón, The Collaborative Innovation Center: Neeuko has a
@@ -174,6 +175,7 @@ const About = () => {
           </p>
         </DateTitleBody>
       </div>
+      <ThreeImage />
     </Layout>
   );
 };
