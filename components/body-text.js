@@ -11,12 +11,10 @@ export const TitleBody = ({
   position = "relative",
   textAlign = "center",
   title = "TITLE",
-  verticalAlign = "top",
-  width = "100%"
+  verticalAlign = "top"
 }) => (
   <div
     style={{
-      width: width,
       display: display,
       position: position,
       margin: margin,
