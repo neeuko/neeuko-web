@@ -1,8 +1,6 @@
-// @ts-check
-/** @type {{title: string}} */
-
 import Head from "next/head";
 import { Hamburger } from "./navigations";
+import { Spacing } from "../lib/spacing";
 
 export default ({ children, title = "Neeuko", hamburger = false }) => (
   <div>
@@ -14,8 +12,11 @@ export default ({ children, title = "Neeuko", hamburger = false }) => (
     {hamburger && <Hamburger />}
     <div
       style={{
-        width: hamburger ? "calc(100% - 54pt)" : "calc(100% - 20pt)",
-        marginLeft: hamburger ? "44pt" : "10pt"
+        width: "calc(100% - 34pt)",
+        padding: `${Spacing.xl} ${Spacing.xxl}`,
+        position: "absolute",
+        left: "34pt",
+        top: "0"
       }}
     >
       {children}

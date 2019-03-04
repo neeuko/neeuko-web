@@ -4,6 +4,7 @@ import { H1, H4, P } from "../../lib/typography";
 import { TitleBody, ImgTitleBody } from "../../components/body-text";
 import { CTA } from "../../components/buttons";
 import { ThreeImage } from "../../components/image-slider";
+import { Spacing } from "../../lib/spacing";
 
 const About = () => {
   const [initialized, setInitialized] = useState(false);
@@ -157,31 +158,31 @@ const About = () => {
           textAlign="left"
           title="Security"
         >
-          <ol>
-            <ul>
+          <ul>
+            <li>
               Accidents – Any accident that occurs in the workshop must be
               informed immediately to the supervisor or staff member in charge.
               Accidents that appear to be harmless or minor are always
               important. These accidents include personal damages as well as
               those done to the machines or tools.
-            </ul>
-            <ul>
+            </li>
+            <li>
               In case of emergency, dial 911 using the University’s phone
               number.
-            </ul>
-            <ul>
+            </li>
+            <li>
               First Aid – The first aid kit is found under the fabrication lab.
               There will be personnel ready to assist during the process.
-            </ul>
-            <ul>
+            </li>
+            <li>
               Danger – Anything that represents a potential risk must be
               addressed immediately.
-            </ul>
-            <ul>Fire – In case of fire, pull the emergency lever. </ul>
-          </ol>
+            </li>
+            <li>Fire – In case of fire, pull the emergency lever. </li>
+          </ul>
         </TitleBody>
       </div>
-      <div style={{ textAlign: "center", marginBottom: "30pt" }}>
+      <div style={{ textAlign: "center", margin: Spacing.xl }}>
         <CTA onClick={() => console.log("success!")}>EQUIPMENT COST & USE</CTA>
       </div>
       <ThreeImage style={{ margin: "30pt 0" }} />
@@ -217,7 +218,7 @@ const About = () => {
         </ImgTitleBody>
       </div>
       <div>
-        <div style={{ textAlign: "center" }}>
+        <div style={{ textAlign: "center", marginBottom: Spacing.xl }}>
           <CTA onClick={() => console.log("success!")}>MEMBERSHIP</CTA>
         </div>
         <P style={{ width: "70%", display: "block" }}>

@@ -50,6 +50,15 @@ const About = () => {
 
       <ThreeImage />
 
+      <DateTitleBody
+        date="February 17, 2016"
+        title="Sagrado opens the first center of collaborative innovation in Puerto Rico"
+      >
+        Sagrado Corazón inaugurates the first collaborative innovation center in
+        Puerto Rico where you can develop and execute your idea all in one
+        place.
+      </DateTitleBody>
+
       {/* Begin 2 DateTitleBody paragraphs */}
       <div>
         <DateTitleBody

@@ -4,6 +4,7 @@ import Link from "next/link";
 import { H1, H2, A } from "../lib/typography";
 import { Colors } from "../lib/colors";
 import { VerticalBtn } from "../components/buttons.js";
+import { Spacing } from "../lib/spacing";
 
 export const Hamburger = props => {
   const [initialized, setInitialized] = useState(false);
@@ -67,7 +68,8 @@ export const Hamburger = props => {
           style={{
             width: "127pt",
             position: "relative",
-            margin: "auto"
+            margin: "auto",
+            marginTop: Spacing.xl
           }}
         >
           <Link href="/">

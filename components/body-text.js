@@ -1,12 +1,11 @@
 import React, { useState, useEffect } from "react";
-import { H1, H2, H3, H4, H5, H6, P } from "../lib/typography";
+import { H1, H2, H3, H4, P } from "../lib/typography";
 import { Colors } from "../lib/colors";
+import { Spacing } from "../lib/spacing";
 
 export const TitleBody = ({
   children = "Body",
   display = "inline-block",
-  margin = "auto",
-  padding = "auto",
   position = "relative",
   textAlign = "center",
   title = "TITLE",
@@ -16,12 +15,11 @@ export const TitleBody = ({
     style={{
       display: display,
       position: position,
-      margin: margin,
-      verticalAlign: verticalAlign,
-      padding: padding
+      marginBottom: Spacing.lg,
+      verticalAlign: verticalAlign
     }}
   >
-    <H4 style={{ textAlign: textAlign }}>{title}</H4>
+    <H2 style={{ textAlign: textAlign, marginBottom: Spacing.md }}>{title}</H2>
     <P>{children}</P>
   </div>
 );
@@ -44,10 +42,10 @@ export const DateTitleBody = ({
       marginTop: marginTop
     }}
   >
-    <H6 style={{ marginBottom: marginBottom, lineHeight: lineHeight }}>
+    <H4 style={{ marginBottom: marginBottom, lineHeight: lineHeight }}>
       {date}
-    </H6>
-    <H5>{title}</H5>
+    </H4>
+    <H2>{title}</H2>
     <P style={{ marginBottom: marginBottom }}>{children}</P>
   </div>
 );
@@ -76,14 +74,14 @@ export const ImgTitleBody = ({
     <div style={{ textAlign: "center" }}>
       <img
         src={imgUrl}
-        marign="5% auto 2%"
         width="119pt"
         style={{
-          border: `1pt solid ${active ? Colors.blue : Colors.black}`
+          border: `1pt solid ${active ? Colors.blue : Colors.black}`,
+          margin: Spacing.sm
         }}
       />
     </div>
-    <H4 style={{ textAlign: textAlign }}>{title}</H4>
+    <H3 style={{ textAlign: textAlign }}>{title}</H3>
     <P>{children}</P>
   </div>
 );
@@ -185,8 +183,8 @@ export const TitleSubtitleBodySideImg = ({
           left: "0"
         }}
       >
-        <H4 style={{ textAlign: textAlign }}>{title}</H4>
-        <H6 style={{ textAlign: textAlign }}>{subtitle}</H6>
+        <H2 style={{ textAlign: textAlign }}>{title}</H2>
+        <H4 style={{ textAlign: textAlign }}>{subtitle}</H4>
         <P>{children}</P>
       </div>
       <div
