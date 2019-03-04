@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { H2 } from "../lib/typography";
+import { H1 } from "../lib/typography";
 import { Colors } from "../lib/colors";
 
 export const VerticalBtn = ({ text, onClick, activeBtn, transition }) => {
@@ -45,7 +45,7 @@ export const VerticalBtn = ({ text, onClick, activeBtn, transition }) => {
           return <br />;
         } else {
           return (
-            <H2
+            <H1
               key={index}
               color={activeBtn ? Colors.black : Colors.white}
               style={{
@@ -57,7 +57,7 @@ export const VerticalBtn = ({ text, onClick, activeBtn, transition }) => {
               }}
             >
               {string}
-            </H2>
+            </H1>
           );
         }
       })}
@@ -75,7 +75,7 @@ export const CTA = props => (
       cursor: "pointer"
     }}
   >
-    <H2
+    <H1
       color={Colors.white}
       style={{
         padding: "5pt 20pt",
@@ -83,6 +83,6 @@ export const CTA = props => (
       }}
     >
       {props.children}
-    </H2>
+    </H1>
   </button>
 );
