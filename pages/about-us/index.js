@@ -21,13 +21,13 @@ const About = () => {
   return (
     <Layout hamburger>
       <div>
-        <TitleBody padding="85px 50px" title="WHO WE ARE">
+        <TitleBody padding="85pt 50pt" title="WHO WE ARE">
           At Sagrado Corazón, The Collaborative Innovation Center: Neeuko has a
           team of multidisciplinary design facilitators, technology, and
           infrastructure that gives visionaries access to product development
           resources so they can achieve their dreams.
         </TitleBody>
-        <TitleBody padding="85px 50px" title="WHAT WE DO">
+        <TitleBody padding="85pt 50pt" title="WHAT WE DO">
           At The Center we work at the intersection of academic research,
           practical design, and art. It is organized as a structure of three
           units: a design laboratory, a fabrication lab(FabLab), and a community
@@ -35,7 +35,7 @@ const About = () => {
           areas of ideation, validation, research, product development, and
           commercialization.
         </TitleBody>
-        <TitleBody padding="85px 50px" title="OUR PRINCIPLES">
+        <TitleBody padding="85pt 50pt" title="OUR PRINCIPLES">
           We are committed to increasing accessibility to design & innovation
           tools and services within our immediate community. To that end we
           pursue challenging design projects with a critical perspective

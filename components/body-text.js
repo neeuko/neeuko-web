@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { H1, H2, H3, H4, H5, H6, P } from "../lib/typography";
 import { Colors } from "../lib/colors";
-import { blue } from "ansi-colors";
 
 export const TitleBody = ({
   children = "Body",
@@ -86,6 +85,69 @@ export const ImgTitleBody = ({
     </div>
     <H4 style={{ textAlign: textAlign }}>{title}</H4>
     <P>{children}</P>
+  </div>
+);
+
+export const TitleListSideImg = ({
+  imgUrl = "../static/images/icon.png",
+  children = "Body",
+  title = "TITLE",
+  display = "inlne-block",
+  position = "relative"
+}) => (
+  <div
+    style={{
+      width: "100%",
+      position: position
+    }}
+  >
+    <div
+      style={{
+        margin: "auto",
+        width: "80%",
+        position: "relative"
+      }}
+    />
+    <div>
+      <div
+        style={{
+          display: display,
+          width: "50%",
+          position: "absolute",
+          left: "0",
+          textAlign: "left",
+          padding: "15pt"
+        }}
+      >
+        <H4>{title}</H4>
+        <P
+          style={{
+            padding: "10pt",
+            margin: "0",
+            border: `1pt solid ${Colors.blue}`
+          }}
+        >
+          {children}
+        </P>
+      </div>
+    </div>
+    <div
+      style={{
+        display: "inline-block",
+        position: "absolute",
+        width: "50%",
+        height: "100%",
+        right: "0"
+      }}
+    >
+      <img
+        src={imgUrl}
+        width="260pt"
+        style={{
+          marginLeft: "20pt"
+        }}
+      />
+    </div>
   </div>
 );
 
