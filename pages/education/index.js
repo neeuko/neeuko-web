@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Layout from "../../components/layout";
 import { H1 } from "../../lib/typography";
-import { TitleBody } from "../../components/body-text";
+import { TitleBody, TitleListSideImg } from "../../components/body-text";
 import { CTA } from "../../components/buttons";
 
 const About = () => {
@@ -45,6 +45,22 @@ const About = () => {
         </TitleBody>
         <div style={{ textAlign: "center" }}>
           <CTA onClick={() => console.log("success!")}>SERVICES</CTA>
+
+          <TitleListSideImg>
+            <ul>
+              <li>
+                United Nations Sustainable Development Goals Case Study Workshop
+              </li>
+              <li>
+                United Nations Sustainable Development Goals Stakeholders
+                Workshop
+              </li>
+              <li>
+                Presentation and Public Speaking Practice: Debate Workshop
+              </li>
+              <li>Customer Value Proposition Workshop</li>
+            </ul>
+          </TitleListSideImg>
         </div>
       </div>
     </Layout>
