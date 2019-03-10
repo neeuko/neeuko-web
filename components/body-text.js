@@ -2,21 +2,20 @@ import React, { useState, useEffect } from "react";
 import { H1, H2, H3, H4, P } from "../lib/typography";
 import { Colors } from "../lib/colors";
 import { Spacing } from "../lib/spacing";
+import * as A from "../lib/animation";
 
 export const TitleBody = ({
   children = "Body",
-  display = "inline-block",
-  position = "relative",
   textAlign = "center",
   title = "TITLE",
   verticalAlign = "top"
 }) => (
   <div
     style={{
-      display: display,
-      position: position,
       marginBottom: Spacing.lg,
-      verticalAlign: verticalAlign
+      verticalAlign: verticalAlign,
+      width: "300pt",
+      margin: "20pt"
     }}
   >
     <H2 style={{ textAlign: textAlign, marginBottom: Spacing.md }}>{title}</H2>

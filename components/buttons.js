@@ -1,3 +1,4 @@
+import * as S from "../lib/styles";
 import React, { useState, useEffect } from "react";
 import { H1 } from "../lib/typography";
 import { Colors } from "../lib/colors";
@@ -66,23 +67,9 @@ export const VerticalBtn = ({ text, onClick, activeBtn, transition }) => {
 };
 
 export const CTA = props => (
-  <button
-    type="button"
-    onClick={props.onClick}
-    style={{
-      backgroundColor: Colors.blue,
-      border: "none",
-      cursor: "pointer"
-    }}
-  >
-    <H1
-      color={Colors.white}
-      style={{
-        padding: "5pt 20pt",
-        margin: "0"
-      }}
-    >
+  <S.CTA type="button" onClick={props.onClick}>
+    <H1 style={{ padding: "5pt 20pt", margin: "0" }} color={Colors.white}>
       {props.children}
     </H1>
-  </button>
+  </S.CTA>
 );
