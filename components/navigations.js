@@ -166,8 +166,10 @@ export const GridNav = () => {
   const [onHover, setOnHover] = useState("");
   const rowWidth = "900pt";
   const rowHeight = "150pt";
+  const gridWidth = "880pt";
   return (
     <S.Grid>
+      <S.WhiteBG width={gridWidth} />
       <S.GridContainer>
         <S.GridRow rowWidth={rowWidth} rowHeight={rowHeight}>
           <S.GridItemImg backgroundUrl="../static/images/about_01.png">

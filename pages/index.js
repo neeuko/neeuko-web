@@ -21,14 +21,12 @@ const App = () => {
     }
   });
 
-  const handle = () => {};
-
   return (
     <Layout>
       {intro && (
-        <S.LandingBackground intro={introTransition}>
+        <S.LogoBackground intro={introTransition}>
           <S.Logo intro={introTransition}>NEEUKO</S.Logo>
-        </S.LandingBackground>
+        </S.LogoBackground>
       )}
       <GridNav />
     </Layout>
