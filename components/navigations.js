@@ -5,6 +5,7 @@ import { H1, H2, A } from "../lib/typography";
 import { Colors } from "../lib/colors";
 import { VerticalBtn } from "../components/buttons.js";
 import { Spacing } from "../lib/spacing";
+import * as S from "../lib/styles";
 
 export const Hamburger = props => {
   const [initialized, setInitialized] = useState(false);
@@ -128,6 +129,27 @@ export const Hamburger = props => {
               CONTACT
             </A>
           </Link>
+          <br />
+          <br />
+          <div
+            style={{
+              display: "inline-block",
+              margin: "30pt 15pt 0 0"
+            }}
+          >
+            <A>
+              <img src="../static/icons/ig.png" width="48pt" />
+            </A>
+          </div>
+          <div
+            style={{
+              display: "inline-block"
+            }}
+          >
+            <A>
+              <img src="../static/icons/fb.png" width="48pt" />
+            </A>
+          </div>
         </div>
         <VerticalBtn
           text={activePage === "" ? "home" : activePage}
@@ -137,5 +159,241 @@ export const Hamburger = props => {
         />
       </nav>
     </header>
+  );
+};
+
+export const GridNav = () => {
+  const [onHover, setOnHover] = useState("");
+  const rowWidth = "900pt";
+  const rowHeight = "150pt";
+  const gridWidth = "880pt";
+  return (
+    <S.Grid>
+      <S.WhiteBG width={gridWidth} />
+      <S.GridContainer>
+        <S.GridRow rowWidth={rowWidth} rowHeight={rowHeight}>
+          <S.GridItemImg backgroundUrl="../static/images/about_01.png">
+            <Link href="/about-us">
+              <S.GridItemAWhite
+                onHover={onHover === "about-us"}
+                onMouseOver={() => setOnHover("about-us")}
+                onMouseOut={() => setOnHover("")}
+              >
+                ABOUT
+              </S.GridItemAWhite>
+            </Link>
+          </S.GridItemImg>
+          <S.GridItemImg backgroundUrl="../static/images/about_02.png">
+            <Link href="/about-us">
+              <S.GridItemAWhite
+                onHover={onHover === "about-us"}
+                onMouseOver={() => setOnHover("about-us")}
+                onMouseOut={() => setOnHover("")}
+              />
+            </Link>
+          </S.GridItemImg>
+          <S.GridItem>
+            <Link href="/our-work">
+              <S.GridItemA
+                onHover={onHover === "our-work"}
+                onMouseOver={() => setOnHover("our-work")}
+                onMouseOut={() => setOnHover("")}
+              >
+                OUR WORK
+              </S.GridItemA>
+            </Link>
+          </S.GridItem>
+          <S.GridItem color={Colors.black}>
+            <Link href="/our-work">
+              <S.GridItemA
+                onHover={onHover === "our-work"}
+                onMouseOver={() => setOnHover("our-work")}
+                onMouseOut={() => setOnHover("")}
+              />
+            </Link>
+          </S.GridItem>
+          <S.GridItem color={Colors.black}>
+            <Link href="/our-work">
+              <S.GridItemA
+                onHover={onHover === "our-work"}
+                onMouseOver={() => setOnHover("our-work")}
+                onMouseOut={() => setOnHover("")}
+              />
+            </Link>
+          </S.GridItem>
+          <S.GridItemImg backgroundUrl="../static/images/comm_01.png">
+            <Link href="/community-programs">
+              <S.GridItemAWhite
+                onHover={onHover === "community-programs"}
+                onMouseOver={() => setOnHover("community-programs")}
+                onMouseOut={() => setOnHover("")}
+              />
+            </Link>
+          </S.GridItemImg>
+        </S.GridRow>
+        <S.GridRow rowWidth={rowWidth} rowHeight={rowHeight}>
+          <S.GridItem color={Colors.grey} />
+          <S.GridItemImg backgroundUrl="../static/images/about_03.png">
+            <Link href="/about-us">
+              <S.GridItemAWhite
+                onHover={onHover === "about-us"}
+                onMouseOver={() => setOnHover("about-us")}
+                onMouseOut={() => setOnHover("")}
+              />
+            </Link>
+          </S.GridItemImg>
+          <S.GridItemImg backgroundUrl="../static/images/fab_01.png">
+            <Link href="/fablab">
+              <S.GridItemA
+                onHover={onHover === "fablab"}
+                onMouseOver={() => setOnHover("fablab")}
+                onMouseOut={() => setOnHover("")}
+              >
+                FABLAB
+              </S.GridItemA>
+            </Link>
+          </S.GridItemImg>
+          <S.GridItemImg backgroundUrl="../static/images/fab_02.png">
+            <Link href="/fablab">
+              <S.GridItemA
+                onHover={onHover === "fablab"}
+                onMouseOver={() => setOnHover("fablab")}
+                onMouseOut={() => setOnHover("")}
+              />
+            </Link>
+          </S.GridItemImg>
+          <S.GridItemImg backgroundUrl="../static/images/comm_02.png">
+            <Link href="/community-programs">
+              <S.GridItemAWhite
+                onHover={onHover === "community-programs"}
+                onMouseOver={() => setOnHover("community-programs")}
+                onMouseOut={() => setOnHover("")}
+              >
+                COMMUNITY PROGRAMS
+              </S.GridItemAWhite>
+            </Link>
+          </S.GridItemImg>
+          <S.GridItemImg backgroundUrl="../static/images/comm_03.png">
+            <Link href="/community-programs">
+              <S.GridItemAWhite
+                onHover={onHover === "community-programs"}
+                onMouseOver={() => setOnHover("community-programs")}
+                onMouseOut={() => setOnHover("")}
+              />
+            </Link>
+          </S.GridItemImg>
+        </S.GridRow>
+        <S.GridRow rowWidth={rowWidth} rowHeight={rowHeight}>
+          <S.GridItem color={Colors.black}>
+            <Link href="/education">
+              <S.GridItemA
+                onHover={onHover === "education"}
+                onMouseOver={() => setOnHover("education")}
+                onMouseOut={() => setOnHover("")}
+              />
+            </Link>
+          </S.GridItem>
+          <S.GridItem color={Colors.black}>
+            <Link href="/education">
+              <S.GridItemA
+                onHover={onHover === "education"}
+                onMouseOver={() => setOnHover("education")}
+                onMouseOut={() => setOnHover("")}
+              >
+                EDUCATION
+              </S.GridItemA>
+            </Link>
+          </S.GridItem>
+          <S.GridItemImg backgroundUrl="../static/images/fab_03.png">
+            <Link href="/fablab">
+              <S.GridItemA
+                onHover={onHover === "fablab"}
+                onMouseOver={() => setOnHover("fablab")}
+                onMouseOut={() => setOnHover("")}
+              />
+            </Link>
+          </S.GridItemImg>
+          <S.GridItem color={Colors.black}>
+            <Link href="/events">
+              <S.GridItemA
+                onHover={onHover === "events"}
+                onMouseOver={() => setOnHover("events")}
+                onMouseOut={() => setOnHover("")}
+              />
+            </Link>
+          </S.GridItem>
+          <S.GridItem color={Colors.black}>
+            <Link href="/events">
+              <S.GridItemA
+                onHover={onHover === "events"}
+                onMouseOver={() => setOnHover("events")}
+                onMouseOut={() => setOnHover("")}
+              >
+                EVENTS
+              </S.GridItemA>
+            </Link>
+          </S.GridItem>
+          <S.GridItemImg backgroundUrl="../static/images/comm_04.png">
+            <Link href="/community-programs">
+              <S.GridItemAWhite
+                onHover={onHover === "community-programs"}
+                onMouseOver={() => setOnHover("community-programs")}
+                onMouseOut={() => setOnHover("")}
+              />
+            </Link>
+          </S.GridItemImg>
+        </S.GridRow>
+        <S.GridRow rowWidth={rowWidth} rowHeight={rowHeight}>
+          <S.GridItem color={Colors.black}>
+            <Link href="/education">
+              <S.GridItemA
+                onHover={onHover === "education"}
+                onMouseOver={() => setOnHover("education")}
+                onMouseOut={() => setOnHover("")}
+              />
+            </Link>
+          </S.GridItem>
+          <S.GridItemImg backgroundUrl="../static/images/fab_04.png">
+            <Link href="/fablab">
+              <S.GridItemA
+                onHover={onHover === "fablab"}
+                onMouseOver={() => setOnHover("fablab")}
+                onMouseOut={() => setOnHover("")}
+              />
+            </Link>
+          </S.GridItemImg>
+          <S.GridItemImg backgroundUrl="../static/images/fab_05.png">
+            <Link href="/fablab">
+              <S.GridItemA
+                onHover={onHover === "fablab"}
+                onMouseOver={() => setOnHover("fablab")}
+                onMouseOut={() => setOnHover("")}
+              />
+            </Link>
+          </S.GridItemImg>
+          <S.GridItem color={Colors.grey} />
+          <S.GridItem color={Colors.black}>
+            <Link href="/events">
+              <S.GridItemA
+                onHover={onHover === "events"}
+                onMouseOver={() => setOnHover("events")}
+                onMouseOut={() => setOnHover("")}
+              />
+            </Link>
+          </S.GridItem>
+          <S.GridItem color={onHover === "contact" ? Colors.blue : Colors.red}>
+            <Link href="/contact">
+              <S.GridItemA
+                onHover={onHover === "contact"}
+                onMouseOver={() => setOnHover("contact")}
+                onMouseOut={() => setOnHover("")}
+              >
+                CONTACT
+              </S.GridItemA>
+            </Link>
+          </S.GridItem>
+        </S.GridRow>
+      </S.GridContainer>
+    </S.Grid>
   );
 };

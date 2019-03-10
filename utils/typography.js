@@ -2,7 +2,7 @@ import Typography from "typography";
 
 export const DefaultTypography = new Typography({
   title: "Default Typography",
-  baseFontSize: "15px",
+  baseFontSize: "16px",
   baseLineHeight: "1.5",
   headerFontFamily: [
     "Avenir Next",
