@@ -13,6 +13,8 @@ export const Hamburger = props => {
   const [activeHamburger, setActiveHamburger] = useState(false);
   const [activeDarkBackground, setActiveDarkBackground] = useState(false);
   const [activePage, setActivePage] = useState("");
+  const [onHoverIg, setOnHoverIg] = useState("");
+  const [onHoverFb, setOnHoverFb] = useState("");
 
   useEffect(() => {
     if (!initialized) {
@@ -41,123 +43,106 @@ export const Hamburger = props => {
 
   return (
     <header>
-      {/* background */}
-      <div
-        style={{
-          backgroundColor: "grey",
-          width: "100%",
-          height: "100%",
-          position: "fixed",
-          top: "0",
-          opacity: activeDarkBackground ? "0.5" : "0",
-          transition: transition,
-          zIndex: activeDarkBackground ? "10" : "-1"
-        }}
+      <S.HamburgerBG
+        activeDarkBackground={activeDarkBackground}
+        transition={transition}
+        onClick={() => handleOnHamburguerClick()}
       />
-      <nav
-        style={{
-          position: "fixed",
-          left: activeHamburger ? "0" : "-300pt",
-          backgroundColor: Colors.black,
-          height: "100%",
-          width: "300pt",
-          transition: transition,
-          zIndex: "11"
-        }}
-      >
-        <div
+      <S.HamburgerNav activeHamburger={activeHamburger} transition={transition}>
+        <Link href="/">
+          <S.HamburgerA
+            color={Colors.white}
+            style={{ marginBottom: "40pt", fontSize: "3rem" }}
+          >
+            neeuko
+          </S.HamburgerA>
+        </Link>
+        <Link href="/about-us">
+          <S.HamburgerA
+            color={activePage === "about-us" ? Colors.blue : Colors.white}
+          >
+            ABOUT US
+          </S.HamburgerA>
+        </Link>
+        <Link href="/our-work">
+          <S.HamburgerA
+            color={activePage === "our-work" ? Colors.blue : Colors.white}
+          >
+            OUR WORK
+          </S.HamburgerA>
+        </Link>
+        <Link href="/education">
+          <S.HamburgerA
+            color={activePage === "education" ? Colors.blue : Colors.white}
+          >
+            EDUCATION
+          </S.HamburgerA>
+        </Link>
+        <Link href="/fablab">
+          <S.HamburgerA
+            color={activePage === "fablab" ? Colors.blue : Colors.white}
+          >
+            FABLAB
+          </S.HamburgerA>
+        </Link>
+        <Link href="/community-programs">
+          <S.HamburgerA
+            color={
+              activePage === "community-programs" ? Colors.blue : Colors.white
+            }
+          >
+            COMMUNITY PROGRAMS
+          </S.HamburgerA>
+        </Link>
+        <Link href="/events">
+          <S.HamburgerA
+            color={activePage === "events" ? Colors.blue : Colors.white}
+          >
+            EVENTS
+          </S.HamburgerA>
+        </Link>
+        <Link href="/contact">
+          <S.HamburgerA
+            color={activePage === "contact" ? Colors.blue : Colors.white}
+          >
+            CONTACT
+          </S.HamburgerA>
+        </Link>
+        <S.Icon
           style={{
-            width: "127pt",
-            position: "relative",
-            margin: "auto",
-            marginTop: Spacing.xl
+            margin: "60pt 15pt 0 -6pt"
           }}
         >
-          <Link href="/">
-            <A color={activePage === "" ? Colors.blue : Colors.white}>Home</A>
-          </Link>
-          <br />
-          <br />
-          <Link href="/about-us">
-            <A color={activePage === "about-us" ? Colors.blue : Colors.white}>
-              ABOUT US
-            </A>
-          </Link>
-          <br />
-          <br />
-          <Link href="/our-work">
-            <A color={activePage === "our-work" ? Colors.blue : Colors.white}>
-              OUR WORK
-            </A>
-          </Link>
-          <br />
-          <br />
-          <Link href="/education">
-            <A color={activePage === "education" ? Colors.blue : Colors.white}>
-              EDUCATION
-            </A>
-          </Link>
-          <br />
-          <br />
-          <Link href="/fablab">
-            <A color={activePage === "fablab" ? Colors.blue : Colors.white}>
-              FABLAB
-            </A>
-          </Link>
-          <br />
-          <br />
-          <Link href="/community-programs">
-            <A
-              color={
-                activePage === "community-programs" ? Colors.blue : Colors.white
-              }
-            >
-              COMMUNITY PROGRAMS
-            </A>
-          </Link>
-          <br />
-          <br />
-          <Link href="/events">
-            <A color={activePage === "events" ? Colors.blue : Colors.white}>
-              EVENTS
-            </A>
-          </Link>
-          <br />
-          <br />
-          <Link href="/contact">
-            <A color={activePage === "contact" ? Colors.blue : Colors.white}>
-              CONTACT
-            </A>
-          </Link>
-          <br />
-          <br />
-          <div
-            style={{
-              display: "inline-block",
-              margin: "30pt 15pt 0 0"
-            }}
+          <S.Btn
+            type="button"
+            onClick={() =>
+              window.open("https://www.instagram.com/neeuko/", "_blank")
+            }
+            onMouseOver={() => setOnHoverIg("_hover")}
+            onMouseOut={() => setOnHoverIg("")}
           >
-            <A>
-              <img src="../static/icons/ig.png" width="48pt" />
-            </A>
-          </div>
-          <div
-            style={{
-              display: "inline-block"
-            }}
+            <img src={`../static/icons/ig${onHoverIg}.png`} width="44pt" />
+          </S.Btn>
+        </S.Icon>
+        <S.Icon>
+          <S.Btn
+            type="button"
+            onClick={() =>
+              window.open("https://www.facebook.com/neeuko/", "_blank")
+            }
+            onMouseOver={() => setOnHoverFb("_hover")}
+            onMouseOut={() => setOnHoverFb("")}
           >
-            <A>
-              <img src="../static/icons/fb.png" width="48pt" />
-            </A>
-          </div>
-        </div>
+            <img src={`../static/icons/fb${onHoverFb}.png`} width="44pt" />
+          </S.Btn>
+        </S.Icon>
         <VerticalBtn
           text={activePage === "" ? "home" : activePage}
           onClick={() => handleOnHamburguerClick()}
           activeBtn={activeHamburger}
           transition={transition}
         />
-      </nav>
+      </S.HamburgerNav>
     </header>
   );
 };
