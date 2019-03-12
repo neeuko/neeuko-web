@@ -3,7 +3,7 @@ import Layout from "../../components/layout";
 import { H1, H4, P } from "../../lib/typography";
 import { TitleBody, ImgTitleBody } from "../../components/body-text";
 import { CTA } from "../../components/buttons";
-import { ThreeImage } from "../../components/image-slider";
+import ImgSlider from "../../components/image-slider";
 import { Spacing } from "../../lib/spacing";
 
 const About = () => {
@@ -185,7 +185,7 @@ const About = () => {
       <div style={{ textAlign: "center", margin: Spacing.xl }}>
         <CTA onClick={() => console.log("success!")}>EQUIPMENT COST & USE</CTA>
       </div>
-      <ThreeImage style={{ margin: "30pt 0" }} />
+      <ImgSlider style={{ margin: "30pt 0" }} />
       {/* Begin Service button and the ImgTitleBody div */}
 
       <div style={{ textAlign: "center", marginTop: "50pt" }}>

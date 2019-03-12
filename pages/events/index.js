@@ -1,7 +1,11 @@
 import React, { useState, useEffect } from "react";
 import Layout from "../../components/layout";
-import { H1 } from "../../lib/typography";
+import { H1, H3, H4, P } from "../../lib/typography";
 import { TitleBody } from "../../components/body-text";
+import * as S from "../../lib/styles";
+import { Colors } from "../../lib/colors";
+import { Spacing } from "../../lib/spacing";
+import { RegularBtn } from "../../components/buttons";
 
 const About = () => {
   const [initialized, setInitialized] = useState(false);
@@ -19,17 +23,92 @@ const About = () => {
 
   return (
     <Layout hamburger>
-      <div>
-        <H1>NEEUKO WEB</H1>
-        <TitleBody title="WHAT WE DO">
-          At The Center we work at the intersection of academic research,
-          practical design, and art. It is organized as a structure of three
-          units: a design laboratory, a fabrication lab(FabLab), and a community
-          program(Nuestro Barrio); within those units we provide services in the
-          areas of ideation, validation, research, product development, and
-          commercialization.
-        </TitleBody>
-      </div>
+      <S.LargeContainer>
+        <H1
+          color={Colors.blue}
+          style={{ textAlign: "center", marginBottom: Spacing.lg }}
+        >
+          EVENTS
+        </H1>
+        <S.GridLargeCard margin="0">
+          <S.GridLargeCardImg src="" />
+          <H4 style={{ margin: `0 0 ${Spacing.sm} 0` }}>FEBRUARY 17, 2019</H4>
+          <H3
+            style={{
+              marginBottom: Spacing.md
+            }}
+          >
+            SAGRADO OPENS THE FIRST CENTER OF COLLABORATIVE INNOVATIONIN PUERTO
+            RICO
+          </H3>
+          <RegularBtn>LEARN MORE</RegularBtn>
+        </S.GridLargeCard>
+        <S.GridLargeCard margin="0 19pt">
+          <S.GridLargeCardImg src="" />
+          <H4 style={{ margin: `0 0 ${Spacing.sm} 0` }}>FEBRUARY 17, 2019</H4>
+          <H3
+            style={{
+              marginBottom: Spacing.md
+            }}
+          >
+            SAGRADO OPENS THE FIRST CENTER OF COLLABORATIVE INNOVATIONIN PUERTO
+            RICO
+          </H3>
+          <RegularBtn>LEARN MORE</RegularBtn>
+        </S.GridLargeCard>
+        <S.GridLargeCard margin="0">
+          <S.GridLargeCardImg src="" />
+          <H4 style={{ margin: `0 0 ${Spacing.sm} 0` }}>FEBRUARY 17, 2019</H4>
+          <H3
+            style={{
+              marginBottom: Spacing.md
+            }}
+          >
+            SAGRADO OPENS THE FIRST CENTER OF COLLABORATIVE INNOVATIONIN PUERTO
+            RICO
+          </H3>
+          <RegularBtn>LEARN MORE</RegularBtn>
+        </S.GridLargeCard>
+        <S.GridLargeCard margin="0">
+          <S.GridLargeCardImg src="" />
+          <H4 style={{ margin: `0 0 ${Spacing.sm} 0` }}>FEBRUARY 17, 2019</H4>
+          <H3
+            style={{
+              marginBottom: Spacing.md
+            }}
+          >
+            SAGRADO OPENS THE FIRST CENTER OF COLLABORATIVE INNOVATIONIN PUERTO
+            RICO
+          </H3>
+          <RegularBtn>LEARN MORE</RegularBtn>
+        </S.GridLargeCard>
+        <S.GridLargeCard margin="0 19pt">
+          <S.GridLargeCardImg src="" />
+          <H4 style={{ margin: `0 0 ${Spacing.sm} 0` }}>FEBRUARY 17, 2019</H4>
+          <H3
+            style={{
+              marginBottom: Spacing.md
+            }}
+          >
+            SAGRADO OPENS THE FIRST CENTER OF COLLABORATIVE INNOVATIONIN PUERTO
+            RICO
+          </H3>
+          <RegularBtn>LEARN MORE</RegularBtn>
+        </S.GridLargeCard>
+        <S.GridLargeCard margin="0">
+          <S.GridLargeCardImg src="" />
+          <H4 style={{ margin: `0 0 ${Spacing.sm} 0` }}>FEBRUARY 17, 2019</H4>
+          <H3
+            style={{
+              marginBottom: Spacing.md
+            }}
+          >
+            SAGRADO OPENS THE FIRST CENTER OF COLLABORATIVE INNOVATIONIN PUERTO
+            RICO
+          </H3>
+          <RegularBtn>LEARN MORE</RegularBtn>
+        </S.GridLargeCard>
+      </S.LargeContainer>
     </Layout>
   );
 };

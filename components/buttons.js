@@ -1,6 +1,6 @@
 import * as S from "../lib/styles";
 import React, { useState, useEffect } from "react";
-import { H1 } from "../lib/typography";
+import { H1, H2 } from "../lib/typography";
 import { Colors } from "../lib/colors";
 
 export const VerticalBtn = ({ text, onClick, activeBtn, transition }) => {
@@ -72,4 +72,15 @@ export const CTA = props => (
       {props.children}
     </H1>
   </S.CTA>
+);
+
+export const RegularBtn = props => (
+  <S.RegularBtn type="button" onClick={props.onClick}>
+    <H2
+      style={{ padding: "5pt 20pt", margin: "0", textAlign: "center" }}
+      color={Colors.white}
+    >
+      {props.children}
+    </H2>
+  </S.RegularBtn>
 );
