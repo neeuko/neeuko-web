@@ -3,29 +3,15 @@ import { H1, H2, A } from "../lib/typography";
 import { Colors } from "../lib/colors";
 import { DateTitleBody } from "../components/body-text";
 import { Spacing } from "../lib/spacing";
+import * as S from "../lib/styles";
 
-export const ThreeImage = props => {
+export default props => {
   return (
-    <div
-      style={{
-        textAlign: "center",
-        position: "relative",
-        marginBottom: Spacing.md
-      }}
-    >
-      <button
-        type="button"
-        style={{
-          cursor: "pointer",
-          border: "none",
-          backgroundColor: "transparent",
-          position: "relative",
-          left: "-25pt",
-          bottom: "50pt"
-        }}
-      >
+    <S.ImgSlider>
+      {/* LEFT ARROW */}
+      <S.ImgSliderArrow type="button">
         <img src="../static/icons/arrow.png" width="20pt" />
-      </button>
+      </S.ImgSliderArrow>
       <img
         src=""
         style={{
@@ -33,7 +19,8 @@ export const ThreeImage = props => {
           height: "176pt",
           backgroundColor: "grey",
           display: "inline-block",
-          margin: "0 5pt"
+          border: "none",
+          margin: "0 0 0 10pt"
         }}
       />
       <img
@@ -43,7 +30,7 @@ export const ThreeImage = props => {
           height: "180pt",
           backgroundColor: "grey",
           display: "inline-block",
-          margin: "0 5pt",
+          margin: "0 10pt",
           border: `2pt solid ${Colors.blue}`
         }}
       />
@@ -54,24 +41,14 @@ export const ThreeImage = props => {
           height: "176pt",
           backgroundColor: "grey",
           display: "inline-block",
-          margin: "0 5pt"
+          border: "none",
+          margin: "0 10pt 0 0"
         }}
       />
-      <button
-        type="button"
-        style={{
-          cursor: "pointer",
-          border: "none",
-          backgroundColor: "transparent",
-          position: "relative",
-          left: "50pt",
-          bottom: "50pt",
-          webkitTransform: "scaleX(-1)",
-          transform: "scaleX(-1)"
-        }}
-      >
+      {/* RIGHT ARROW */}
+      <S.ImgSliderArrow type="button" right>
         <img src="../static/icons/arrow.png" width="20pt" />
-      </button>
-    </div>
+      </S.ImgSliderArrow>
+    </S.ImgSlider>
   );
 };

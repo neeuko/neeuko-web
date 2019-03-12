@@ -13,7 +13,7 @@ export default ({ children, title = "Neeuko", hamburger = false }) => (
     <div
       style={{
         width: "calc(100% - 34pt)",
-        padding: `${Spacing.xl} ${Spacing.xxl}`,
+        padding: `${Spacing.xl} 0`,
         position: "absolute",
         left: "34pt",
         top: "0"
