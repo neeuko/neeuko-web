@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-
+import ScrollAnimation from "react-animate-on-scroll";
 import Layout from "../../components/layout";
 import { TitleBody, DateTitleBody } from "../../components/body-text";
 import { CTA } from "../../components/buttons";
@@ -14,9 +14,6 @@ const About = () => {
   const [initialized, setInitialized] = useState(false);
 
   useEffect(() => {
-    if (!initialized) {
-      setInitialized(true);
-    }
   });
 
   return (
@@ -106,24 +103,29 @@ const About = () => {
           in Puerto Rico where you can develop and execute your idea all in one
           place.
         </DateTitleBody>
-        <DateTitleBody
-          date="FECHA"
-          title="TITULO O TEXTO REFERENTE A LA ENTREVISTA"
-        >
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus
-          maximus finibus arcu, in porta tortor dignissim non. Aliquam vitae
-          erat ultricies, ornare dolor in, vulputate leo. Cras vel nunc
-          convallis, pretium purus in, sodales ante. Sed ornare velit in est
-          fermentum consectetur. Mauris a ultricies magna. Nulla et augue in leo
-          consectetur vulputate vitae a neque. Nunc eleifend neque libero, sed
-          ultrices ante ullamcorper ut. Duis maximus consectetur nulla, non
-          tincidunt neque feugiat vel. Etiam egestas aliquam neque sed
-          pellentesque. In faucibus ultricies mi vitae tempor. Phasellus
-          convallis sodales convallis. Nunc pellentesque ex vel est feugiat, at
-          scelerisque sem ornare. Phasellus aliquet sed nunc ut euismod. Morbi
-          vitae lacinia ex. Suspendisse eu blandit mauris, quis lacinia libero.
-          In tristique eros varius nibh volutpat, at bibendum sapien tristique.
-        </DateTitleBody>
+        <ScrollAnimation animateIn="fadeIn">
+          <DateTitleBody
+            date="FECHA"
+            title="TITULO O TEXTO REFERENTE A LA ENTREVISTA"
+          >
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus
+              maximus finibus arcu, in porta tortor dignissim non. Aliquam vitae
+              erat ultricies, ornare dolor in, vulputate leo. Cras vel nunc
+              convallis, pretium purus in, sodales ante. Sed ornare velit in est
+              fermentum consectetur. Mauris a ultricies magna. Nulla et augue in
+              leo consectetur vulputate vitae a neque. Nunc eleifend neque
+              libero, sed ultrices ante ullamcorper ut. Duis maximus consectetur
+              nulla, non tincidunt neque feugiat vel. Etiam egestas aliquam
+              neque sed pellentesque. In faucibus ultricies mi vitae tempor.
+              Phasellus convallis sodales convallis. Nunc pellentesque ex vel
+              est feugiat, at scelerisque sem ornare. Phasellus aliquet sed nunc
+              ut euismod. Morbi vitae lacinia ex. Suspendisse eu blandit mauris,
+              quis lacinia libero. In tristique eros varius nibh volutpat, at
+              bibendum sapien tristique.
+            </p>
+          </DateTitleBody>
+        </ScrollAnimation>
       </S.LargeContainer>
     </Layout>
   );
