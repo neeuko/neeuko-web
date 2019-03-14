@@ -59,36 +59,6 @@ const About = () => {
             </P>
           </S.TitleBody>
         </A.FadeInUp>
-      </S.LargeContainer>
-      <ImgSlider />
-      <S.LargeContainer>
-        <DateTitleBody
-          date="February 17, 2016"
-          title="Sagrado opens the first center of collaborative innovation in Puerto Rico"
-          width="554pt"
-        >
-          Sagrado Corazón inaugurates the first collaborative innovation center
-          in Puerto Rico where you can develop and execute your idea all in one
-          place.
-        </DateTitleBody>
-        <DateTitleBody
-          date="FECHA"
-          title="TITULO O TEXTO REFERENTE A LA ENTREVISTA"
-        >
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus
-          maximus finibus arcu, in porta tortor dignissim non. Aliquam vitae
-          erat ultricies, ornare dolor in, vulputate leo. Cras vel nunc
-          convallis, pretium purus in, sodales ante. Sed ornare velit in est
-          fermentum consectetur. Mauris a ultricies magna. Nulla et augue in leo
-          consectetur vulputate vitae a neque. Nunc eleifend neque libero, sed
-          ultrices ante ullamcorper ut. Duis maximus consectetur nulla, non
-          tincidunt neque feugiat vel. Etiam egestas aliquam neque sed
-          pellentesque. In faucibus ultricies mi vitae tempor. Phasellus
-          convallis sodales convallis. Nunc pellentesque ex vel est feugiat, at
-          scelerisque sem ornare. Phasellus aliquet sed nunc ut euismod. Morbi
-          vitae lacinia ex. Suspendisse eu blandit mauris, quis lacinia libero.
-          In tristique eros varius nibh volutpat, at bibendum sapien tristique.
-        </DateTitleBody>
         <H1
           color={Colors.blue}
           style={{ textAlign: "center", marginBottom: Spacing.lg }}
@@ -125,6 +95,35 @@ const About = () => {
           <H3>Title</H3>
           <P>Subtitle</P>
         </S.GridCard>
+        <ImgSlider />
+
+        <DateTitleBody
+          date="February 17, 2016"
+          title="Sagrado opens the first center of collaborative innovation in Puerto Rico"
+          width="554pt"
+        >
+          Sagrado Corazón inaugurates the first collaborative innovation center
+          in Puerto Rico where you can develop and execute your idea all in one
+          place.
+        </DateTitleBody>
+        <DateTitleBody
+          date="FECHA"
+          title="TITULO O TEXTO REFERENTE A LA ENTREVISTA"
+        >
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus
+          maximus finibus arcu, in porta tortor dignissim non. Aliquam vitae
+          erat ultricies, ornare dolor in, vulputate leo. Cras vel nunc
+          convallis, pretium purus in, sodales ante. Sed ornare velit in est
+          fermentum consectetur. Mauris a ultricies magna. Nulla et augue in leo
+          consectetur vulputate vitae a neque. Nunc eleifend neque libero, sed
+          ultrices ante ullamcorper ut. Duis maximus consectetur nulla, non
+          tincidunt neque feugiat vel. Etiam egestas aliquam neque sed
+          pellentesque. In faucibus ultricies mi vitae tempor. Phasellus
+          convallis sodales convallis. Nunc pellentesque ex vel est feugiat, at
+          scelerisque sem ornare. Phasellus aliquet sed nunc ut euismod. Morbi
+          vitae lacinia ex. Suspendisse eu blandit mauris, quis lacinia libero.
+          In tristique eros varius nibh volutpat, at bibendum sapien tristique.
+        </DateTitleBody>
       </S.LargeContainer>
     </Layout>
   );
