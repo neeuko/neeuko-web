@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from "react";
 import ScrollAnimation from "react-animate-on-scroll";
+
 import Layout from "../../components/layout";
 import { TitleBody, DateTitleBody } from "../../components/body-text";
 import { CTA } from "../../components/buttons";
 import ImgSlider from "../../components/image-slider";
-import * as A from "../../lib/animation";
 import * as S from "../../lib/styles";
 import { Spacing } from "../../lib/spacing";
 import { H1, H2, H3, P } from "../../lib/typography";
@@ -13,13 +13,12 @@ import { Colors } from "../../lib/colors";
 const About = () => {
   const [initialized, setInitialized] = useState(false);
 
-  useEffect(() => {
-  });
+  useEffect(() => {});
 
   return (
     <Layout hamburger>
       <S.LargeContainer>
-        <A.FadeInUp>
+        <ScrollAnimation animateIn="fadeIn">
           <S.TitleBody>
             <H2 marginBottom={Spacing.md} textAlign="center">
               WHO WE ARE
@@ -55,55 +54,55 @@ const About = () => {
               perspective questioning issues of ethics and justice.
             </P>
           </S.TitleBody>
-        </A.FadeInUp>
-        <H1
-          color={Colors.blue}
-          style={{ textAlign: "center", marginBottom: Spacing.lg }}
-        >
-          MEET THE TEAM
-        </H1>
-        <S.GridCard margin={`0 5pt 0 0`} corner>
-          <S.GridCardImg src="" />
-          <H3>Title</H3>
-          <P>Subtitle</P>
-        </S.GridCard>
-        <S.GridCard margin="0 5pt">
-          <S.GridCardImg src="" />
-          <H3>Title</H3>
-          <P>Subtitle</P>
-        </S.GridCard>
-        <S.GridCard margin="0 5pt">
-          <S.GridCardImg src="" />
-          <H3>Title</H3>
-          <P>Subtitle</P>
-        </S.GridCard>
-        <S.GridCard margin="0 0 0 5pt" corner>
-          <S.GridCardImg src="" />
-          <H3>Title</H3>
-          <P>Subtitle</P>
-        </S.GridCard>
-        <S.GridCard margin="0 5pt 0 0" corner>
-          <S.GridCardImg src="" />
-          <H3>Title</H3>
-          <P>Subtitle</P>
-        </S.GridCard>
-        <S.GridCard margin="0 5pt">
-          <S.GridCardImg src="" />
-          <H3>Title</H3>
-          <P>Subtitle</P>
-        </S.GridCard>
-        <ImgSlider />
-
-        <DateTitleBody
-          date="February 17, 2016"
-          title="Sagrado opens the first center of collaborative innovation in Puerto Rico"
-          width="554pt"
-        >
-          Sagrado Corazón inaugurates the first collaborative innovation center
-          in Puerto Rico where you can develop and execute your idea all in one
-          place.
-        </DateTitleBody>
+        </ScrollAnimation>
         <ScrollAnimation animateIn="fadeIn">
+          <H1
+            color={Colors.blue}
+            style={{ textAlign: "center", marginBottom: Spacing.lg }}
+          >
+            MEET THE TEAM
+          </H1>
+          <S.GridCard margin={`0 5pt 0 0`} corner>
+            <S.GridCardImg src="" />
+            <H3>Name</H3>
+            <P>Position</P>
+          </S.GridCard>
+          <S.GridCard margin="0 5pt">
+            <S.GridCardImg src="" />
+            <H3>Name</H3>
+            <P>Position</P>
+          </S.GridCard>
+          <S.GridCard margin="0 5pt">
+            <S.GridCardImg src="" />
+            <H3>Name</H3>
+            <P>Position</P>
+          </S.GridCard>
+          <S.GridCard margin="0 0 0 5pt" corner>
+            <S.GridCardImg src="" />
+            <H3>Name</H3>
+            <P>Position</P>
+          </S.GridCard>
+          <S.GridCard margin="0 5pt 0 0" corner>
+            <S.GridCardImg src="" />
+            <H3>Name</H3>
+            <P>Position</P>
+          </S.GridCard>
+          <S.GridCard margin="0 5pt">
+            <S.GridCardImg src="" />
+            <H3>Name</H3>
+            <P>Position</P>
+          </S.GridCard>
+        </ScrollAnimation>
+        <ScrollAnimation animateIn="fadeIn">
+          <H1
+            color={Colors.blue}
+            style={{ textAlign: "center", marginTop: Spacing.xl }}
+          >
+            PAPERS & PRESS
+          </H1>
+        </ScrollAnimation>
+        <ImgSlider />
+        {/* <ScrollAnimation animateIn="fadeIn">
           <DateTitleBody
             date="FECHA"
             title="TITULO O TEXTO REFERENTE A LA ENTREVISTA"
@@ -125,7 +124,7 @@ const About = () => {
               bibendum sapien tristique.
             </p>
           </DateTitleBody>
-        </ScrollAnimation>
+        </ScrollAnimation> */}
       </S.LargeContainer>
     </Layout>
   );
