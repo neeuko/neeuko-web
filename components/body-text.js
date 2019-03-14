@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import { H1, H2, H3, H4, P } from "../lib/typography";
 import { Colors } from "../lib/colors";
 import { Spacing } from "../lib/spacing";
-import * as A from "../lib/animation";
 
 export const TitleBody = ({
   children = "Body",
