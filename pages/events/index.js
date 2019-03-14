@@ -24,12 +24,6 @@ const About = () => {
   return (
     <Layout hamburger>
       <S.LargeContainer>
-        <H1
-          color={Colors.blue}
-          style={{ textAlign: "center", marginBottom: Spacing.lg }}
-        >
-          EVENTS
-        </H1>
         <S.GridLargeCard margin="0">
           <S.GridLargeCardImg src="" />
           <H4 style={{ margin: `0 0 ${Spacing.sm} 0` }}>FEBRUARY 17, 2019</H4>

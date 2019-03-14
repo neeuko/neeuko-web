@@ -25,7 +25,9 @@ const App = () => {
     <Layout>
       {intro && (
         <S.LogoBackground intro={introTransition}>
-          <S.Logo intro={introTransition}>NEEUKO</S.Logo>
+          <S.Logo intro={introTransition}>
+            <img src="../static/icons/logo.png" width="260pt" />
+          </S.Logo>
         </S.LogoBackground>
       )}
       <GridNav />

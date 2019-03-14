@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
+
 import Router from "next/router";
 import Link from "next/link";
-import { H1, H2, A } from "../lib/typography";
+import { H1, H2, H3, H4, A } from "../lib/typography";
 import { Colors } from "../lib/colors";
 import { VerticalBtn } from "../components/buttons.js";
 import { Spacing } from "../lib/spacing";
@@ -15,6 +16,8 @@ export const Hamburger = props => {
   const [activePage, setActivePage] = useState("");
   const [onHoverIg, setOnHoverIg] = useState("");
   const [onHoverFb, setOnHoverFb] = useState("");
+  const [subscribeVal, setSubscribeVal] = useState("");
+  const [logoHover, setLogoHover] = useState("white");
 
   useEffect(() => {
     if (!initialized) {
@@ -51,10 +54,11 @@ export const Hamburger = props => {
       <S.HamburgerNav activeHamburger={activeHamburger} transition={transition}>
         <Link href="/">
           <S.HamburgerA
-            color={Colors.white}
-            style={{ marginBottom: "40pt", fontSize: "3rem" }}
+            style={{ marginBottom: Spacing.md }}
+            onMouseOver={() => setLogoHover("hover")}
+            onMouseOut={() => setLogoHover("white")}
           >
-            neeuko
+            <img src={`../static/icons/logo_${logoHover}.png`} width="120pt" />
           </S.HamburgerA>
         </Link>
         <Link href="/about-us">
@@ -108,34 +112,56 @@ export const Hamburger = props => {
             CONTACT
           </S.HamburgerA>
         </Link>
-        <S.Icon
-          style={{
-            margin: "60pt 15pt 0 -6pt"
-          }}
-        >
-          <S.Btn
-            type="button"
-            onClick={() =>
-              window.open("https://www.instagram.com/neeuko/", "_blank")
-            }
-            onMouseOver={() => setOnHoverIg("_hover")}
-            onMouseOut={() => setOnHoverIg("")}
+        <S.HamburgerFooter>
+          <H4 color={Colors.white}>SUBSCRIBE:</H4>
+          <S.InputText
+            type="text"
+            placeholder="youremail@here.com"
+            color={Colors.blue}
+            width="75%"
+            value={subscribeVal}
+            onChange={e => setSubscribeVal(e.target.value)}
+          />
+          <S.InputTextSubmit
+            type="submit"
+            width={`calc(25% - 26pt)`}
+            onClick={() => setSubscribeVal("")}
           >
-            <img src={`../static/icons/ig${onHoverIg}.png`} width="44pt" />
-          </S.Btn>
-        </S.Icon>
-        <S.Icon>
-          <S.Btn
-            type="button"
-            onClick={() =>
-              window.open("https://www.facebook.com/neeuko/", "_blank")
-            }
-            onMouseOver={() => setOnHoverFb("_hover")}
-            onMouseOut={() => setOnHoverFb("")}
+            <img
+              src="../static/icons/send.png"
+              width="24pt"
+              style={{ margin: "0" }}
+            />
+          </S.InputTextSubmit>
+          <S.Icon
+            style={{
+              margin: `${Spacing.md} 15pt 0 -6pt`
+            }}
           >
-            <img src={`../static/icons/fb${onHoverFb}.png`} width="44pt" />
-          </S.Btn>
-        </S.Icon>
+            <S.Btn
+              type="button"
+              onClick={() =>
+                window.open("https://www.instagram.com/neeuko/", "_blank")
+              }
+              onMouseOver={() => setOnHoverIg("_hover")}
+              onMouseOut={() => setOnHoverIg("")}
+            >
+              <img src={`../static/icons/ig${onHoverIg}.png`} width="44pt" />
+            </S.Btn>
+          </S.Icon>
+          <S.Icon>
+            <S.Btn
+              type="button"
+              onClick={() =>
+                window.open("https://www.facebook.com/neeuko/", "_blank")
+              }
+              onMouseOver={() => setOnHoverFb("_hover")}
+              onMouseOut={() => setOnHoverFb("")}
+            >
+              <img src={`../static/icons/fb${onHoverFb}.png`} width="44pt" />
+            </S.Btn>
+          </S.Icon>
+        </S.HamburgerFooter>
         <VerticalBtn
           text={activePage === "" ? "home" : activePage}
           onClick={() => handleOnHamburguerClick()}
