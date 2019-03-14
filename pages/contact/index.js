@@ -1,10 +1,19 @@
 import React, { useState, useEffect } from "react";
+
+import * as A from "../../lib/animation";
+import * as S from "../../lib/styles";
+import { Spacing } from "../../lib/spacing";
+import { H1, H2, H3, P } from "../../lib/typography";
+import { Colors } from "../../lib/colors";
 import Layout from "../../components/layout";
-import { H1 } from "../../lib/typography";
 import { TitleBody } from "../../components/body-text";
+import { CTA } from "../../components/buttons";
 
 const About = () => {
   const [initialized, setInitialized] = useState(false);
+  const [emailVal, setEmailVal] = useState("");
+  const [subjectVal, setSubjectVal] = useState("");
+  const [messageVal, setMessageVal] = useState("");
 
   useEffect(() => {
     if (!initialized) {
@@ -19,17 +28,64 @@ const About = () => {
 
   return (
     <Layout hamburger>
-      <div>
-        <H1>NEEUKO WEB</H1>
-        <TitleBody title="WHAT WE DO">
-          At The Center we work at the intersection of academic research,
-          practical design, and art. It is organized as a structure of three
-          units: a design laboratory, a fabrication lab(FabLab), and a community
-          program(Nuestro Barrio); within those units we provide services in the
-          areas of ideation, validation, research, product development, and
-          commercialization.
-        </TitleBody>
-      </div>
+      <S.LargeContainer>
+        <H1>LET'S TALK</H1>
+        <div>
+          <div
+            style={{
+              width: "50%",
+              display: "inline-block",
+              verticalAlign: "top",
+              paddingRight: Spacing.md
+            }}
+          >
+            <S.InputText
+              placeholder="Email"
+              type="text"
+              value={emailVal}
+              onChange={e => setEmailVal(e.target.value)}
+            />
+            <S.InputText
+              placeholder="Subject"
+              type="text"
+              value={subjectVal}
+              onChange={e => setSubjectVal(e.target.value)}
+            />
+            <S.TextArea
+              placeholder="Message"
+              type="text-area"
+              value={messageVal}
+              onChange={e => setMessageVal(e.target.value)}
+            />
+            <div
+              style={{
+                width: "100%",
+                textAlign: "right",
+                marginTop: Spacing.md
+              }}
+            >
+              <CTA>SEND MESSAGE</CTA>
+            </div>
+          </div>
+          <div
+            style={{
+              width: "50%",
+              display: "inline-block",
+              paddingLeft: Spacing.md,
+              verticalAlign: "top"
+            }}
+          >
+            <P>
+              At neeuko we pride ourselves on incorporating design in every
+              aspect of our decision making and production efforts. For us,
+              design is not only about making, is also about thinking,
+              questioning, and reinventing. Through our design courses we seek
+              to inspire students to think about design as a form of
+              questioning.
+            </P>
+          </div>
+        </div>
+      </S.LargeContainer>
     </Layout>
   );
 };
