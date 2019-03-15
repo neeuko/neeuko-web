@@ -10,6 +10,7 @@ const App = () => {
   const [introTransition, setIntroTransition] = useState(false);
 
   useEffect(() => {
+    console.log(process.env.SECRET);
     if (!initialized) {
       setInitialized(true);
       setTimeout(() => {
