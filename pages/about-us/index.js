@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import ScrollAnimation from "react-animate-on-scroll";
 
+import firebase from "../../lib/firebase";
 import Layout from "../../components/layout";
 import { TitleBody, DateTitleBody } from "../../components/body-text";
 import { CTA } from "../../components/buttons";
@@ -12,8 +13,20 @@ import { Colors } from "../../lib/colors";
 
 const About = () => {
   const [initialized, setInitialized] = useState(false);
+  const [about, setAbout] = useState("");
 
-  useEffect(() => {});
+  useEffect(() => {
+    if (!initialized) {
+      setInitialized(true);
+      // INITIALIZED FIREBASE
+      const database = firebase.database();
+      const ref = database.ref().child("about");
+      ref.on("value", snap => {
+        setAbout(snap.val());
+      });
+    }
+    // console.log("🔥 ", about);
+  });
 
   return (
     <Layout hamburger>
