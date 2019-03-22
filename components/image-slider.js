@@ -32,39 +32,15 @@ export default props => {
         <S.ImgSliderArrow type="button" onClick={() => rotateArrayBackwards()}>
           <img src="../static/icons/arrow.png" width="20pt" />
         </S.ImgSliderArrow>
-        <img
+        <S.ImgSliderImg src="" margin="0 0 0 10pt" hide />
+        <S.ImgSliderImg
           src=""
-          style={{
-            width: "176pt",
-            height: "176pt",
-            backgroundColor: "grey",
-            display: "inline-block",
-            border: "none",
-            margin: "0 0 0 10pt"
-          }}
+          width="180pt"
+          height="180pt"
+          margin="0 10pt"
+          border={`2pt solid ${Colors.blue}`}
         />
-        <img
-          src=""
-          style={{
-            width: "180pt",
-            height: "180pt",
-            backgroundColor: "grey",
-            display: "inline-block",
-            margin: "0 10pt",
-            border: `2pt solid ${Colors.blue}`
-          }}
-        />
-        <img
-          src=""
-          style={{
-            width: "176pt",
-            height: "176pt",
-            backgroundColor: "grey",
-            display: "inline-block",
-            border: "none",
-            margin: "0 10pt 0 0"
-          }}
-        />
+        <S.ImgSliderImg src="" margin="0 10pt 0 0" hide />
         {/* RIGHT ARROW */}
         <S.ImgSliderArrow
           type="button"

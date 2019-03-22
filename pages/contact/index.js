@@ -9,7 +9,7 @@ import Layout from "../../components/layout";
 import { TitleBody } from "../../components/body-text";
 import { CTA } from "../../components/buttons";
 
-const About = () => {
+const Contact = () => {
   const [initialized, setInitialized] = useState(false);
   const [emailVal, setEmailVal] = useState("");
   const [subjectVal, setSubjectVal] = useState("");
@@ -45,7 +45,7 @@ const About = () => {
               value={messageVal}
               onChange={e => setMessageVal(e.target.value)}
             />
-            <div style={{ float: "right", marginTop: Spacing.md }}>
+            <S.BtnContainer>
               <CTA
                 onClick={() => {
                   setEmailVal("");
@@ -55,7 +55,7 @@ const About = () => {
               >
                 SEND MESSAGE
               </CTA>
-            </div>
+            </S.BtnContainer>
           </S.LeftBlock>
           <S.RightBlock>
             <P>
@@ -86,4 +86,4 @@ const About = () => {
   );
 };
 
-export default About;
+export default Contact;

@@ -86,7 +86,7 @@ const About = () => {
               }}
             >
               <Li>
-                Universidad De Sagrado Corazón Human Centered Design Challenge
+                Universidad De Sagrado Corazón Human Centered Design Challenge
               </Li>
             </ul>
           </S.LeftBlock>
@@ -99,12 +99,18 @@ const About = () => {
             ENTREPENEURSHIP
           </H2>
           <S.LeftBlock>
-            <img src="../../static/images/entrepeneurship.png" width="100%" />
+            <img
+              src="../../static/images/entrepeneurship.png"
+              width="100%"
+              style={{ marginBottom: "-5pt" }}
+            />
           </S.LeftBlock>
           <S.RightBlock>
             <ul
               style={{
                 padding: Spacing.lg,
+                width: "100%",
+                margin: "0",
                 border: `1pt solid ${Colors.red}`
               }}
             >

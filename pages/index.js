@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Layout from "../components/layout";
-import { GridNav } from "../components/navigations";
+import { GridNav, GridMobileNav } from "../components/navigations";
 import { H1 } from "../lib/typography";
 import * as S from "../lib/styles";
 
@@ -27,11 +27,12 @@ const App = () => {
       {intro && (
         <S.LogoBackground intro={introTransition}>
           <S.Logo intro={introTransition}>
-            <img src="../static/icons/logo.png" width="260pt" />
+            <S.LogoImg src="../static/icons/logo.png" />
           </S.Logo>
         </S.LogoBackground>
       )}
       <GridNav />
+      <GridMobileNav />
     </Layout>
   );
 };

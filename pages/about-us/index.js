@@ -77,32 +77,32 @@ const About = () => {
           </H1>
           <S.GridCard margin={`0 5pt 0 0`} corner>
             <S.GridCardImg src="" />
-            <H3>Name</H3>
+            <H3 style={{ marginBottom: Spacing.xs }}>Name</H3>
             <P>Position</P>
           </S.GridCard>
           <S.GridCard margin="0 5pt">
             <S.GridCardImg src="" />
-            <H3>Name</H3>
+            <H3 style={{ marginBottom: Spacing.xs }}>Name</H3>
             <P>Position</P>
           </S.GridCard>
           <S.GridCard margin="0 5pt">
             <S.GridCardImg src="" />
-            <H3>Name</H3>
+            <H3 style={{ marginBottom: Spacing.xs }}>Name</H3>
             <P>Position</P>
           </S.GridCard>
           <S.GridCard margin="0 0 0 5pt" corner>
             <S.GridCardImg src="" />
-            <H3>Name</H3>
+            <H3 style={{ marginBottom: Spacing.xs }}>Name</H3>
             <P>Position</P>
           </S.GridCard>
           <S.GridCard margin="0 5pt 0 0" corner>
             <S.GridCardImg src="" />
-            <H3>Name</H3>
+            <H3 style={{ marginBottom: Spacing.xs }}>Name</H3>
             <P>Position</P>
           </S.GridCard>
           <S.GridCard margin="0 5pt">
             <S.GridCardImg src="" />
-            <H3>Name</H3>
+            <H3 style={{ marginBottom: Spacing.xs }}>Name</H3>
             <P>Position</P>
           </S.GridCard>
         </ScrollAnimation>

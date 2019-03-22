@@ -19,8 +19,8 @@ export const DateTitleBody = ({
   width
 }) => (
   <S.DateTitleBody width={width}>
-    <H4>{date}</H4>
-    <H2 style={{ marginBottom: Spacing.sm }}>{title}</H2>
+    <H4 style={{ marginBottom: Spacing.sm }}>{date}</H4>
+    <H2 style={{ marginBottom: Spacing.md }}>{title}</H2>
     <P>{children}</P>
   </S.DateTitleBody>
 );
