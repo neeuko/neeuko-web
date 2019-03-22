@@ -4,7 +4,6 @@ import Router from "next/router";
 import Link from "next/link";
 import { H1, H2, H3, H4, A } from "../lib/typography";
 import { Colors } from "../lib/colors";
-import { VerticalBtn } from "../components/buttons.js";
 import { Spacing } from "../lib/spacing";
 import * as S from "../lib/styles";
 
@@ -18,6 +17,7 @@ export const Hamburger = props => {
   const [onHoverFb, setOnHoverFb] = useState("");
   const [subscribeVal, setSubscribeVal] = useState("");
   const [logoHover, setLogoHover] = useState("white");
+  const [arrayOfString, setArrayOfString] = useState([]);
 
   useEffect(() => {
     if (!initialized) {
@@ -29,6 +29,7 @@ export const Hamburger = props => {
       setActivePage(currentPath());
     } else {
       // add here scripts that need to be called on component did update
+      setArrayOfString(stringToUpperCaseSplit(activePage));
     }
     // add here scripts that need to be called on component will unmount
     return () => {};
@@ -42,6 +43,12 @@ export const Hamburger = props => {
       setActiveHamburger(false);
       setActiveDarkBackground(false);
     }
+  };
+
+  const stringToUpperCaseSplit = string => {
+    let stringToUpperCase = string.toUpperCase();
+    let stringToArray = stringToUpperCase.split("");
+    return stringToArray;
   };
 
   return (
@@ -58,62 +65,73 @@ export const Hamburger = props => {
             onMouseOver={() => setLogoHover("hover")}
             onMouseOut={() => setLogoHover("white")}
           >
-            <img src={`../static/icons/logo_${logoHover}.png`} width="120pt" />
+            <S.HamburgerLogo src={`../static/icons/logo_${logoHover}.png`} />
           </S.HamburgerA>
         </Link>
-        <Link href="/about-us">
-          <S.HamburgerA
-            color={activePage === "about-us" ? Colors.blue : Colors.white}
-          >
-            ABOUT US
-          </S.HamburgerA>
-        </Link>
-        <Link href="/our-work">
-          <S.HamburgerA
-            color={activePage === "our-work" ? Colors.blue : Colors.white}
-          >
-            OUR WORK
-          </S.HamburgerA>
-        </Link>
-        <Link href="/education">
-          <S.HamburgerA
-            color={activePage === "education" ? Colors.blue : Colors.white}
-          >
-            EDUCATION
-          </S.HamburgerA>
-        </Link>
-        <Link href="/fablab">
-          <S.HamburgerA
-            color={activePage === "fablab" ? Colors.blue : Colors.white}
-          >
-            FABLAB
-          </S.HamburgerA>
-        </Link>
-        <Link href="/community-programs">
-          <S.HamburgerA
-            color={
-              activePage === "community-programs" ? Colors.blue : Colors.white
-            }
-          >
-            COMMUNITY PROGRAMS
-          </S.HamburgerA>
-        </Link>
-        <Link href="/events">
-          <S.HamburgerA
-            color={activePage === "events" ? Colors.blue : Colors.white}
-          >
-            EVENTS
-          </S.HamburgerA>
-        </Link>
-        <Link href="/contact">
-          <S.HamburgerA
-            color={activePage === "contact" ? Colors.blue : Colors.white}
-          >
-            CONTACT
-          </S.HamburgerA>
-        </Link>
+        <S.HamburgerPages>
+          <Link href="/about-us">
+            <S.HamburgerA
+              color={activePage === "about-us" ? Colors.blue : Colors.white}
+            >
+              ABOUT US
+            </S.HamburgerA>
+          </Link>
+          <Link href="/our-work">
+            <S.HamburgerA
+              color={activePage === "our-work" ? Colors.blue : Colors.white}
+            >
+              OUR WORK
+            </S.HamburgerA>
+          </Link>
+          <Link href="/education">
+            <S.HamburgerA
+              color={activePage === "education" ? Colors.blue : Colors.white}
+            >
+              EDUCATION
+            </S.HamburgerA>
+          </Link>
+          <Link href="/fablab">
+            <S.HamburgerA
+              color={activePage === "fablab" ? Colors.blue : Colors.white}
+            >
+              FABLAB
+            </S.HamburgerA>
+          </Link>
+          <Link href="/community-programs">
+            <S.HamburgerA
+              color={
+                activePage === "community-programs" ? Colors.blue : Colors.white
+              }
+            >
+              COMMUNITY PROGRAMS
+            </S.HamburgerA>
+          </Link>
+          <Link href="/events">
+            <S.HamburgerA
+              color={activePage === "events" ? Colors.blue : Colors.white}
+            >
+              EVENTS
+            </S.HamburgerA>
+          </Link>
+          <Link href="/request">
+            <S.HamburgerA
+              color={activePage === "request" ? Colors.blue : Colors.white}
+            >
+              REQUEST
+            </S.HamburgerA>
+          </Link>
+          <Link href="/contact">
+            <S.HamburgerA
+              color={activePage === "contact" ? Colors.blue : Colors.white}
+            >
+              CONTACT
+            </S.HamburgerA>
+          </Link>
+        </S.HamburgerPages>
         <S.HamburgerFooter>
-          <H4 color={Colors.white}>SUBSCRIBE:</H4>
+          <H4 color={Colors.white} style={{ marginBottom: Spacing.sm }}>
+            SUBSCRIBE:
+          </H4>
           <S.InputText
             type="text"
             placeholder="youremail@here.com"
@@ -127,11 +145,7 @@ export const Hamburger = props => {
             width={`calc(25% - 26pt)`}
             onClick={() => setSubscribeVal("")}
           >
-            <img
-              src="../static/icons/send.png"
-              width="24pt"
-              style={{ margin: "0" }}
-            />
+            <S.InputTextSubmitImg src="../static/icons/send.png" />
           </S.InputTextSubmit>
           <S.Icon
             style={{
@@ -146,7 +160,7 @@ export const Hamburger = props => {
               onMouseOver={() => setOnHoverIg("_hover")}
               onMouseOut={() => setOnHoverIg("")}
             >
-              <img src={`../static/icons/ig${onHoverIg}.png`} width="44pt" />
+              <S.IconImg src={`../static/icons/ig${onHoverIg}.png`} />
             </S.Btn>
           </S.Icon>
           <S.Icon>
@@ -158,16 +172,38 @@ export const Hamburger = props => {
               onMouseOver={() => setOnHoverFb("_hover")}
               onMouseOut={() => setOnHoverFb("")}
             >
-              <img src={`../static/icons/fb${onHoverFb}.png`} width="44pt" />
+              <S.IconImg src={`../static/icons/fb${onHoverFb}.png`} />
             </S.Btn>
           </S.Icon>
         </S.HamburgerFooter>
-        <VerticalBtn
-          text={activePage === "" ? "home" : activePage}
+        <S.VerticalBtn
+          type="button"
           onClick={() => handleOnHamburguerClick()}
-          activeBtn={activeHamburger}
           transition={transition}
-        />
+          activeBtn={activeHamburger}
+        >
+          {arrayOfString.map((string, index) => {
+            if (string === "-") {
+              return <br />;
+            } else {
+              return (
+                <H1
+                  key={index}
+                  color={activeHamburger ? Colors.black : Colors.white}
+                  style={{
+                    transform: "rotate(90deg)",
+                    width: "14pt",
+                    margin: "-9.3pt",
+                    position: "relative",
+                    left: "12pt"
+                  }}
+                >
+                  {string}
+                </H1>
+              );
+            }
+          })}
+        </S.VerticalBtn>
       </S.HamburgerNav>
     </header>
   );
@@ -175,9 +211,9 @@ export const Hamburger = props => {
 
 export const GridNav = () => {
   const [onHover, setOnHover] = useState("");
-  const rowWidth = "900pt";
-  const rowHeight = "150pt";
-  const gridWidth = "880pt";
+  const rowWidth = "750pt";
+  const rowHeight = "125pt";
+  const gridWidth = "734pt";
   return (
     <S.Grid>
       <S.WhiteBG width={gridWidth} />
@@ -382,7 +418,17 @@ export const GridNav = () => {
               />
             </Link>
           </S.GridItemImg>
-          <S.GridItem color={Colors.grey} />
+          <S.GridItem color={onHover === "request" ? Colors.blue : Colors.grey}>
+            <Link href="/request">
+              <S.GridItemA
+                onHover={onHover === "request"}
+                onMouseOver={() => setOnHover("request")}
+                onMouseOut={() => setOnHover("")}
+              >
+                REQUEST
+              </S.GridItemA>
+            </Link>
+          </S.GridItem>
           <S.GridItem color={Colors.black}>
             <Link href="/events">
               <S.GridItemA
@@ -406,5 +452,58 @@ export const GridNav = () => {
         </S.GridRow>
       </S.GridContainer>
     </S.Grid>
+  );
+};
+
+export const GridMobileNav = () => {
+  return (
+    <S.GridMobile>
+      <Link href="/about-us">
+        <S.GridMobileA backgroundUrl="../static/images/about.png" filter>
+          ABOUT
+        </S.GridMobileA>
+      </Link>
+
+      <Link href="/our-work">
+        <S.GridMobileA backgroundUrl="../static/images/projects.png" filter>
+          OUR WORK
+        </S.GridMobileA>
+      </Link>
+
+      <Link href="/education">
+        <S.GridMobileA backgroundUrl="../static/images/design.png" filter>
+          EDUCATION
+        </S.GridMobileA>
+      </Link>
+
+      <Link href="/fablab">
+        <S.GridMobileA backgroundUrl="../static/images/fab.png" filter>
+          FABLAB
+        </S.GridMobileA>
+      </Link>
+
+      <Link href="/community-programs">
+        <S.GridMobileA backgroundUrl="../static/images/comm.png" filter>
+          COMMUNITY PROGRAMS
+        </S.GridMobileA>
+      </Link>
+
+      <Link href="/events">
+        <S.GridMobileA
+          backgroundUrl="../static/images/entrepeneurship.png"
+          filter
+        >
+          EVENTS
+        </S.GridMobileA>
+      </Link>
+
+      <Link href="/request">
+        <S.GridMobileA>REQUEST</S.GridMobileA>
+      </Link>
+
+      <Link href="/contact">
+        <S.GridMobileA color={Colors.red}>CONTACT</S.GridMobileA>
+      </Link>
+    </S.GridMobile>
   );
 };

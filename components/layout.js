@@ -1,6 +1,7 @@
 import Head from "next/head";
 import { Hamburger } from "./navigations";
 import { Spacing } from "../lib/spacing";
+import * as S from "../lib/styles";
 
 export default ({ children, title = "Neeuko", hamburger = false }) => (
   <div>
@@ -14,16 +15,6 @@ export default ({ children, title = "Neeuko", hamburger = false }) => (
       />
     </Head>
     {hamburger && <Hamburger />}
-    <div
-      style={{
-        width: "calc(100% - 34pt)",
-        padding: `${Spacing.xl} 0`,
-        position: "absolute",
-        left: "34pt",
-        top: "0"
-      }}
-    >
-      {children}
-    </div>
+    <S.LayoutChildren hamburger={hamburger}>{children}</S.LayoutChildren>
   </div>
 );
