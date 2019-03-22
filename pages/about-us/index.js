@@ -68,7 +68,7 @@ const About = () => {
             </P>
           </S.TitleBody>
         </ScrollAnimation>
-        <ScrollAnimation animateIn="fadeIn">
+        {/* <ScrollAnimation animateIn="fadeIn">
           <H1
             color={Colors.blue}
             style={{ textAlign: "center", marginBottom: Spacing.lg }}
@@ -105,8 +105,8 @@ const About = () => {
             <H3 style={{ marginBottom: Spacing.xs }}>Name</H3>
             <P>Position</P>
           </S.GridCard>
-        </ScrollAnimation>
-        <ScrollAnimation animateIn="fadeIn">
+        </ScrollAnimation> */}
+        {/* <ScrollAnimation animateIn="fadeIn">
           <H1
             color={Colors.blue}
             style={{ textAlign: "center", marginTop: Spacing.xl }}
@@ -114,30 +114,7 @@ const About = () => {
             PAPERS & PRESS
           </H1>
         </ScrollAnimation>
-        <ImgSlider />
-        {/* <ScrollAnimation animateIn="fadeIn">
-          <DateTitleBody
-            date="FECHA"
-            title="TITULO O TEXTO REFERENTE A LA ENTREVISTA"
-          >
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus
-              maximus finibus arcu, in porta tortor dignissim non. Aliquam vitae
-              erat ultricies, ornare dolor in, vulputate leo. Cras vel nunc
-              convallis, pretium purus in, sodales ante. Sed ornare velit in est
-              fermentum consectetur. Mauris a ultricies magna. Nulla et augue in
-              leo consectetur vulputate vitae a neque. Nunc eleifend neque
-              libero, sed ultrices ante ullamcorper ut. Duis maximus consectetur
-              nulla, non tincidunt neque feugiat vel. Etiam egestas aliquam
-              neque sed pellentesque. In faucibus ultricies mi vitae tempor.
-              Phasellus convallis sodales convallis. Nunc pellentesque ex vel
-              est feugiat, at scelerisque sem ornare. Phasellus aliquet sed nunc
-              ut euismod. Morbi vitae lacinia ex. Suspendisse eu blandit mauris,
-              quis lacinia libero. In tristique eros varius nibh volutpat, at
-              bibendum sapien tristique.
-            </p>
-          </DateTitleBody>
-        </ScrollAnimation> */}
+        <ImgSlider /> */}
       </S.LargeContainer>
     </Layout>
   );
