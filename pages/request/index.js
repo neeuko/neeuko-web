@@ -32,14 +32,9 @@ const Request = () => {
         <ScrollAnimation animateIn="fadeIn">
           <S.TitleBody>
             <H2 marginBottom={Spacing.md} textAlign="center">
-              WHO WE ARE
+              REQUEST
             </H2>
-            <P>
-              At Sagrado Corazón, The Collaborative Innovation Center: Neeuko
-              has a team of multidisciplinary design facilitators, technology,
-              and infrastructure that gives visionaries access to product
-              development resources so they can achieve their dreams.
-            </P>
+            <P>This page is under construction.</P>
           </S.TitleBody>
         </ScrollAnimation>
       </S.LargeContainer>
