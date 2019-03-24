@@ -1,8 +1,10 @@
-import React, { useState, useEffect } from "react";
-import Layout from "../components/layout";
-import { GridNav, GridMobileNav } from "../components/navigations";
-import { H1 } from "../lib/typography";
-import * as S from "../lib/styles";
+import React, { useState, useEffect } from 'react';
+
+import * as S from '../lib/styles';
+
+import Layout from '../components/layout';
+import { GridNav, GridMobileNav } from '../components/navigations';
+
 
 const App = () => {
   const [initialized, setInitialized] = useState(false);
@@ -10,7 +12,6 @@ const App = () => {
   const [introTransition, setIntroTransition] = useState(false);
 
   useEffect(() => {
-    console.log(process.env.SECRET);
     if (!initialized) {
       setInitialized(true);
       setTimeout(() => {
@@ -24,15 +25,17 @@ const App = () => {
 
   return (
     <Layout>
-      {intro && (
-        <S.LogoBackground intro={introTransition}>
-          <S.Logo intro={introTransition}>
-            <S.LogoImg src="../static/icons/logo.png" />
-          </S.Logo>
-        </S.LogoBackground>
-      )}
-      <GridNav />
-      <GridMobileNav />
+      <div>
+        {intro && (
+          <S.LogoBackground intro={introTransition}>
+            <S.Logo intro={introTransition}>
+              <S.LogoImg src="../static/icons/logo.png" />
+            </S.Logo>
+          </S.LogoBackground>
+        )}
+        <GridNav />
+        <GridMobileNav />
+      </div>
     </Layout>
   );
 };

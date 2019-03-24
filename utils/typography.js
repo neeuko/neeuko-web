@@ -1,26 +1,28 @@
-import Typography from "typography";
+import Typography from 'typography';
 
-export const DefaultTypography = new Typography({
-  title: "Default Typography",
-  baseFontSize: "16px",
-  baseLineHeight: "1.5",
+const DefaultTypography = new Typography({
+  title: 'Default Typography',
+  baseFontSize: '16px',
+  baseLineHeight: '1.5',
   headerFontFamily: [
-    "Avenir Next",
-    "Helvetica Neue",
-    "Segoe UI",
-    "Helvetica",
-    "Arial",
-    "sans-serif"
+    'Avenir Next',
+    'Helvetica Neue',
+    'Segoe UI',
+    'Helvetica',
+    'Arial',
+    'sans-serif',
   ],
-  bodyFontFamily: ["Georgia", "serif"],
+  bodyFontFamily: ['Georgia', 'serif'],
   googleFonts: [
     {
-      name: "Fjalla One",
-      styles: ["400"]
+      name: 'Fjalla One',
+      styles: ['400'],
     },
     {
-      name: "Nunito",
-      styles: ["500"]
-    }
-  ]
+      name: 'Nunito',
+      styles: ['500'],
+    },
+  ],
 });
+
+export default DefaultTypography;

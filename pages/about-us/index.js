@@ -1,29 +1,25 @@
-import React, { useState, useEffect } from "react";
-import ScrollAnimation from "react-animate-on-scroll";
+import React, { useState, useEffect } from 'react';
+import ScrollAnimation from 'react-animate-on-scroll';
 
-import firebase from "../../lib/firebase";
-import Layout from "../../components/layout";
-import { TitleBody, DateTitleBody } from "../../components/body-text";
-import { CTA } from "../../components/buttons";
-import ImgSlider from "../../components/image-slider";
-import * as S from "../../lib/styles";
-import { Spacing } from "../../lib/spacing";
-import { H1, H2, H3, P } from "../../lib/typography";
-import { Colors } from "../../lib/colors";
+import * as S from '../../lib/styles';
+import Spacing from '../../lib/spacing';
+import { H2, P } from '../../lib/typography';
+
+import Layout from '../../components/layout';
 
 const About = () => {
   const [initialized, setInitialized] = useState(false);
-  const [about, setAbout] = useState("");
+  const [about, setAbout] = useState('');
 
   useEffect(() => {
     if (!initialized) {
       setInitialized(true);
       // INITIALIZED FIREBASE
-      const database = firebase.database();
-      const ref = database.ref().child("about");
-      ref.on("value", snap => {
-        setAbout(snap.val());
-      });
+      // const database = firebase.database();
+      // const ref = database.ref().child("about");
+      // ref.on("value", snap => {
+      //   setAbout(snap.val());
+      // });
     }
     // console.log("🔥 ", about);
   });

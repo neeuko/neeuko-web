@@ -1,19 +1,16 @@
-import React, { useState, useEffect } from "react";
-import ScrollAnimation from "react-animate-on-scroll";
+import React, { useState, useEffect } from 'react';
+import ScrollAnimation from 'react-animate-on-scroll';
 
-import * as S from "../../lib/styles";
-import { Spacing } from "../../lib/spacing";
-import { H1, H2, H3, P } from "../../lib/typography";
-import { Colors } from "../../lib/colors";
-import Layout from "../../components/layout";
-import { TitleBody } from "../../components/body-text";
-import { CTA } from "../../components/buttons";
+import * as S from '../../lib/styles';
+import { H1, P } from '../../lib/typography';
+import Layout from '../../components/layout';
+import { CTA } from '../../components/buttons';
 
 const Contact = () => {
   const [initialized, setInitialized] = useState(false);
-  const [emailVal, setEmailVal] = useState("");
-  const [subjectVal, setSubjectVal] = useState("");
-  const [messageVal, setMessageVal] = useState("");
+  const [emailVal, setEmailVal] = useState('');
+  const [subjectVal, setSubjectVal] = useState('');
+  const [messageVal, setMessageVal] = useState('');
 
   useEffect(() => {
     if (!initialized) {
@@ -48,9 +45,9 @@ const Contact = () => {
             <S.BtnContainer>
               <CTA
                 onClick={() => {
-                  setEmailVal("");
-                  setSubjectVal("");
-                  setMessageVal("");
+                  setEmailVal('');
+                  setSubjectVal('');
+                  setMessageVal('');
                 }}
               >
                 SEND MESSAGE
@@ -76,7 +73,8 @@ const Contact = () => {
           <S.RightBlock width="36%" marginBottom="0">
             <H1>OUR LOCATION</H1>
             <P>
-              463, 413 Calle Bouret, <br />
+              463, 413 Calle Bouret,
+              <br />
               San Juan, 00912
             </P>
           </S.RightBlock>

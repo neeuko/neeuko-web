@@ -1,7 +1,13 @@
 {
   "name": "project-00",
   "version": 2,
-  "builds": [{ "src": "./next.config.js", "use": "@now/next" }],
+  "builds": [
+    {
+      "src": "./next.config.js",
+      "use": "@now/next",
+      "config": { "maxLambdaSize": "50mb" }
+    }
+  ],
   "alias": ["project-00"],
   "routes": [
     {

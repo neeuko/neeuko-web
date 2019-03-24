@@ -6,10 +6,11 @@ module.exports = {
     es6: true,
     node: true
   },
-  plugins: ["react", "react-hooks"],
+  plugins: ["react", "react-hooks", "jsx-a11y"],
   rules: {
     "linebreak-style": 0,
     "react-hooks/rules-of-hooks": "error",
-    "react/jsx-filename-extension": 0
+    "react/jsx-filename-extension": 0,
+    "template-tag-spacing": ["error", "never"]
   }
 };

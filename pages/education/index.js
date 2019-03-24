@@ -1,13 +1,12 @@
-import React, { useState, useEffect } from "react";
-import ScrollAnimation from "react-animate-on-scroll";
+import React, { useState, useEffect } from 'react';
+import ScrollAnimation from 'react-animate-on-scroll';
 
-import Layout from "../../components/layout";
-import * as S from "../../lib/styles";
-import { Spacing } from "../../lib/spacing";
-import { Colors } from "../../lib/colors";
-import { H1, H2, H3, H4, P, Li } from "../../lib/typography";
-import { TitleBody, TitleListSideImg } from "../../components/body-text";
-import { CTA } from "../../components/buttons";
+import * as S from '../../lib/styles';
+import Spacing from '../../lib/spacing';
+import Colors from '../../lib/colors';
+import { H1, H2, P, Li } from '../../lib/typography';
+
+import Layout from '../../components/layout';
 
 const About = () => {
   const [initialized, setInitialized] = useState(false);
@@ -69,9 +68,9 @@ const About = () => {
           <H1
             color={Colors.blue}
             style={{
-              textAlign: "center",
+              textAlign: 'center',
               marginTop: Spacing.xl,
-              marginBottom: Spacing.lg
+              marginBottom: Spacing.lg,
             }}
           >
             WORKSHOPS
@@ -82,7 +81,7 @@ const About = () => {
               style={{
                 padding: Spacing.lg,
                 border: `1pt solid ${Colors.black}`,
-                margin: "0"
+                margin: '0',
               }}
             >
               <Li>
@@ -91,7 +90,7 @@ const About = () => {
             </ul>
           </S.LeftBlock>
           <S.RightBlock>
-            <img src="../../static/images/design.png" width="100%" />
+            <img src="../../static/images/design.png" width="100%" alt="Design" />
           </S.RightBlock>
         </ScrollAnimation>
         <ScrollAnimation animateIn="fadeIn">
@@ -102,16 +101,17 @@ const About = () => {
             <img
               src="../../static/images/entrepeneurship.png"
               width="100%"
-              style={{ marginBottom: "-5pt" }}
+              style={{ marginBottom: '-5pt' }}
+              alt="Entrepeneurship"
             />
           </S.LeftBlock>
           <S.RightBlock>
             <ul
               style={{
                 padding: Spacing.lg,
-                width: "100%",
-                margin: "0",
-                border: `1pt solid ${Colors.red}`
+                width: '100%',
+                margin: '0',
+                border: `1pt solid ${Colors.red}`,
               }}
             >
               <Li>

@@ -1,42 +1,24 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect } from 'react';
+import Router from 'next/router';
+import Link from 'next/link';
 
-import Router from "next/router";
-import Link from "next/link";
-import { H1, H2, H3, H4, A } from "../lib/typography";
-import { Colors } from "../lib/colors";
-import { Spacing } from "../lib/spacing";
-import * as S from "../lib/styles";
+import { H1, H4 } from '../lib/typography';
+import Colors from '../lib/colors';
+import Spacing from '../lib/spacing';
+import * as S from '../lib/styles';
 
-export const Hamburger = props => {
-  const [initialized, setInitialized] = useState(false);
-  const [transition, setTransition] = useState("0.3s");
+export const Hamburger = () => {
   const [activeHamburger, setActiveHamburger] = useState(false);
   const [activeDarkBackground, setActiveDarkBackground] = useState(false);
-  const [activePage, setActivePage] = useState("");
-  const [onHoverIg, setOnHoverIg] = useState("");
-  const [onHoverFb, setOnHoverFb] = useState("");
-  const [subscribeVal, setSubscribeVal] = useState("");
-  const [logoHover, setLogoHover] = useState("white");
+  const [activePage, setActivePage] = useState('');
+  const [onHoverIg, setOnHoverIg] = useState('');
+  const [onHoverFb, setOnHoverFb] = useState('');
+  const [subscribeVal, setSubscribeVal] = useState('');
+  const [logoHover, setLogoHover] = useState('white');
   const [arrayOfString, setArrayOfString] = useState([]);
 
-  useEffect(() => {
-    if (!initialized) {
-      setInitialized(true);
-      // add here scripts that need to be called on component will mount
-      const currentPath = () => {
-        return Router.asPath.replace(/^\/+|\/+$/g, "");
-      };
-      setActivePage(currentPath());
-    } else {
-      // add here scripts that need to be called on component did update
-      setArrayOfString(stringToUpperCaseSplit(activePage));
-    }
-    // add here scripts that need to be called on component will unmount
-    return () => {};
-  });
-
   const handleOnHamburguerClick = () => {
-    if (activeHamburger == false) {
+    if (activeHamburger === false) {
       setActiveHamburger(true);
       setActiveDarkBackground(true);
     } else {
@@ -45,25 +27,34 @@ export const Hamburger = props => {
     }
   };
 
-  const stringToUpperCaseSplit = string => {
-    let stringToUpperCase = string.toUpperCase();
-    let stringToArray = stringToUpperCase.split("");
+  const stringToUpperCaseSplit = (string) => {
+    const stringToUpperCase = string.toUpperCase();
+    const stringToArray = stringToUpperCase.split('');
     return stringToArray;
   };
+
+  useEffect(() => {
+    if (activePage === '') {
+      const currentPath = () => (Router.asPath.replace(/^\/+|\/+$/g, ''));
+      setActivePage(currentPath());
+      setArrayOfString(stringToUpperCaseSplit(currentPath()));
+    }
+  });
 
   return (
     <header>
       <S.HamburgerBG
         activeDarkBackground={activeDarkBackground}
-        transition={transition}
         onClick={() => handleOnHamburguerClick()}
       />
-      <S.HamburgerNav activeHamburger={activeHamburger} transition={transition}>
+      <S.HamburgerNav activeHamburger={activeHamburger}>
         <Link href="/">
           <S.HamburgerA
             style={{ marginBottom: Spacing.md }}
-            onMouseOver={() => setLogoHover("hover")}
-            onMouseOut={() => setLogoHover("white")}
+            onMouseOver={() => setLogoHover('hover')}
+            onMouseOut={() => setLogoHover('white')}
+            onFocus={() => setLogoHover('hover')}
+            onBlur={() => setLogoHover('white')}
           >
             <S.HamburgerLogo src={`../static/icons/logo_${logoHover}.png`} />
           </S.HamburgerA>
@@ -71,28 +62,28 @@ export const Hamburger = props => {
         <S.HamburgerPages>
           <Link href="/about-us">
             <S.HamburgerA
-              color={activePage === "about-us" ? Colors.blue : Colors.white}
+              color={activePage === 'about-us' ? Colors.blue : Colors.white}
             >
               ABOUT US
             </S.HamburgerA>
           </Link>
           <Link href="/our-work">
             <S.HamburgerA
-              color={activePage === "our-work" ? Colors.blue : Colors.white}
+              color={activePage === 'our-work' ? Colors.blue : Colors.white}
             >
               OUR WORK
             </S.HamburgerA>
           </Link>
           <Link href="/education">
             <S.HamburgerA
-              color={activePage === "education" ? Colors.blue : Colors.white}
+              color={activePage === 'education' ? Colors.blue : Colors.white}
             >
               EDUCATION
             </S.HamburgerA>
           </Link>
           <Link href="/fablab">
             <S.HamburgerA
-              color={activePage === "fablab" ? Colors.blue : Colors.white}
+              color={activePage === 'fablab' ? Colors.blue : Colors.white}
             >
               FABLAB
             </S.HamburgerA>
@@ -100,7 +91,7 @@ export const Hamburger = props => {
           <Link href="/community-programs">
             <S.HamburgerA
               color={
-                activePage === "community-programs" ? Colors.blue : Colors.white
+                activePage === 'community-programs' ? Colors.blue : Colors.white
               }
             >
               COMMUNITY PROGRAMS
@@ -108,21 +99,21 @@ export const Hamburger = props => {
           </Link>
           <Link href="/events">
             <S.HamburgerA
-              color={activePage === "events" ? Colors.blue : Colors.white}
+              color={activePage === 'events' ? Colors.blue : Colors.white}
             >
               EVENTS
             </S.HamburgerA>
           </Link>
           <Link href="/request">
             <S.HamburgerA
-              color={activePage === "request" ? Colors.blue : Colors.white}
+              color={activePage === 'request' ? Colors.blue : Colors.white}
             >
               REQUEST
             </S.HamburgerA>
           </Link>
           <Link href="/contact">
             <S.HamburgerA
-              color={activePage === "contact" ? Colors.blue : Colors.white}
+              color={activePage === 'contact' ? Colors.blue : Colors.white}
             >
               CONTACT
             </S.HamburgerA>
@@ -142,23 +133,23 @@ export const Hamburger = props => {
           />
           <S.InputTextSubmit
             type="submit"
-            width={`calc(25% - 26pt)`}
-            onClick={() => setSubscribeVal("")}
+            width="calc(25% - 26pt)"
+            onClick={() => setSubscribeVal('')}
           >
             <S.InputTextSubmitImg src="../static/icons/send.png" />
           </S.InputTextSubmit>
           <S.Icon
             style={{
-              margin: `${Spacing.md} 15pt 0 -6pt`
+              margin: `${Spacing.md} 15pt 0 -6pt`,
             }}
           >
             <S.Btn
               type="button"
-              onClick={() =>
-                window.open("https://www.instagram.com/neeuko/", "_blank")
-              }
-              onMouseOver={() => setOnHoverIg("_hover")}
-              onMouseOut={() => setOnHoverIg("")}
+              onClick={() => window.open('https://www.instagram.com/neeuko/', '_blank')}
+              onMouseOver={() => setOnHoverIg('_hover')}
+              onMouseOut={() => setOnHoverIg('')}
+              onFocus={() => setOnHoverIg('_hover')}
+              onBlur={() => setOnHoverIg('')}
             >
               <S.IconImg src={`../static/icons/ig${onHoverIg}.png`} />
             </S.Btn>
@@ -166,11 +157,11 @@ export const Hamburger = props => {
           <S.Icon>
             <S.Btn
               type="button"
-              onClick={() =>
-                window.open("https://www.facebook.com/neeuko/", "_blank")
-              }
-              onMouseOver={() => setOnHoverFb("_hover")}
-              onMouseOut={() => setOnHoverFb("")}
+              onClick={() => window.open('https://www.facebook.com/neeuko/', '_blank')}
+              onMouseOver={() => setOnHoverFb('_hover')}
+              onMouseOut={() => setOnHoverFb('')}
+              onFocus={() => setOnHoverFb('_hover')}
+              onBlur={() => setOnHoverFb('')}
             >
               <S.IconImg src={`../static/icons/fb${onHoverFb}.png`} />
             </S.Btn>
@@ -179,29 +170,27 @@ export const Hamburger = props => {
         <S.VerticalBtn
           type="button"
           onClick={() => handleOnHamburguerClick()}
-          transition={transition}
           activeBtn={activeHamburger}
         >
           {arrayOfString.map((string, index) => {
-            if (string === "-") {
-              return <br />;
-            } else {
-              return (
-                <H1
-                  key={index}
-                  color={activeHamburger ? Colors.black : Colors.white}
-                  style={{
-                    transform: "rotate(90deg)",
-                    width: "14pt",
-                    margin: "-9.3pt",
-                    position: "relative",
-                    left: "12pt"
-                  }}
-                >
-                  {string}
-                </H1>
-              );
+            if (string === '-') {
+              return <br key={index.toString()} />;
             }
+            return (
+              <H1
+                key={index.toString()}
+                color={activeHamburger ? Colors.black : Colors.white}
+                style={{
+                  transform: 'rotate(90deg)',
+                  width: '14pt',
+                  margin: '-9.3pt',
+                  position: 'relative',
+                  left: '12pt',
+                }}
+              >
+                {string}
+              </H1>
+            );
           })}
         </S.VerticalBtn>
       </S.HamburgerNav>
@@ -210,10 +199,10 @@ export const Hamburger = props => {
 };
 
 export const GridNav = () => {
-  const [onHover, setOnHover] = useState("");
-  const rowWidth = "750pt";
-  const rowHeight = "125pt";
-  const gridWidth = "734pt";
+  const [onHover, setOnHover] = useState('');
+  const rowWidth = '750pt';
+  const rowHeight = '125pt';
+  const gridWidth = '734pt';
   return (
     <S.Grid>
       <S.WhiteBG width={gridWidth} />
@@ -221,30 +210,36 @@ export const GridNav = () => {
         <S.GridRow rowWidth={rowWidth} rowHeight={rowHeight}>
           <S.GridItemImg backgroundUrl="../static/images/about_01.png">
             <Link href="/about-us">
-              <S.GridItemAWhite
-                onHover={onHover === "about-us"}
-                onMouseOver={() => setOnHover("about-us")}
-                onMouseOut={() => setOnHover("")}
+              <S.GridItemA
+                onhover={onHover === 'about-us' ? 'rgba(21, 194, 202, 0.3)' : 'rgba(255, 255, 255, 0.2)'}
+                onMouseOver={() => setOnHover('about-us')}
+                onMouseOut={() => setOnHover('')}
+                onFocus={() => setOnHover('about-us')}
+                onBlur={() => setOnHover('')}
               >
                 ABOUT
-              </S.GridItemAWhite>
+              </S.GridItemA>
             </Link>
           </S.GridItemImg>
           <S.GridItemImg backgroundUrl="../static/images/about_02.png">
             <Link href="/about-us">
-              <S.GridItemAWhite
-                onHover={onHover === "about-us"}
-                onMouseOver={() => setOnHover("about-us")}
-                onMouseOut={() => setOnHover("")}
+              <S.GridItemA
+                onhover={onHover === 'about-us' ? 'rgba(21, 194, 202, 0.3)' : 'rgba(255, 255, 255, 0.2)'}
+                onMouseOver={() => setOnHover('about-us')}
+                onMouseOut={() => setOnHover('')}
+                onFocus={() => setOnHover('about-us')}
+                onBlur={() => setOnHover('')}
               />
             </Link>
           </S.GridItemImg>
           <S.GridItem>
             <Link href="/our-work">
               <S.GridItemA
-                onHover={onHover === "our-work"}
-                onMouseOver={() => setOnHover("our-work")}
-                onMouseOut={() => setOnHover("")}
+                onhover={onHover === 'our-work' ? 'rgba(21, 194, 202, 0.3)' : 'transparent'}
+                onMouseOver={() => setOnHover('our-work')}
+                onMouseOut={() => setOnHover('')}
+                onFocus={() => setOnHover('our-work')}
+                onBlur={() => setOnHover('')}
               >
                 OUR WORK
               </S.GridItemA>
@@ -253,27 +248,33 @@ export const GridNav = () => {
           <S.GridItem color={Colors.black}>
             <Link href="/our-work">
               <S.GridItemA
-                onHover={onHover === "our-work"}
-                onMouseOver={() => setOnHover("our-work")}
-                onMouseOut={() => setOnHover("")}
+                onhover={onHover === 'our-work' ? 'rgba(21, 194, 202, 0.3)' : 'transparent'}
+                onMouseOver={() => setOnHover('our-work')}
+                onMouseOut={() => setOnHover('')}
+                onFocus={() => setOnHover('our-work')}
+                onBlur={() => setOnHover('')}
               />
             </Link>
           </S.GridItem>
           <S.GridItem color={Colors.black}>
             <Link href="/our-work">
               <S.GridItemA
-                onHover={onHover === "our-work"}
-                onMouseOver={() => setOnHover("our-work")}
-                onMouseOut={() => setOnHover("")}
+                onhover={onHover === 'our-work' ? 'rgba(21, 194, 202, 0.3)' : 'transparent'}
+                onMouseOver={() => setOnHover('our-work')}
+                onMouseOut={() => setOnHover('')}
+                onFocus={() => setOnHover('our-work')}
+                onBlur={() => setOnHover('')}
               />
             </Link>
           </S.GridItem>
           <S.GridItemImg backgroundUrl="../static/images/comm_01.png">
             <Link href="/community-programs">
-              <S.GridItemAWhite
-                onHover={onHover === "community-programs"}
-                onMouseOver={() => setOnHover("community-programs")}
-                onMouseOut={() => setOnHover("")}
+              <S.GridItemA
+                onhover={onHover === 'community-programs' ? 'rgba(21, 194, 202, 0.3)' : 'rgba(255, 255, 255, 0.2)'}
+                onMouseOver={() => setOnHover('community-programs')}
+                onMouseOut={() => setOnHover('')}
+                onFocus={() => setOnHover('community-programs')}
+                onBlur={() => setOnHover('')}
               />
             </Link>
           </S.GridItemImg>
@@ -282,19 +283,23 @@ export const GridNav = () => {
           <S.GridItem color={Colors.grey} />
           <S.GridItemImg backgroundUrl="../static/images/about_03.png">
             <Link href="/about-us">
-              <S.GridItemAWhite
-                onHover={onHover === "about-us"}
-                onMouseOver={() => setOnHover("about-us")}
-                onMouseOut={() => setOnHover("")}
+              <S.GridItemA
+                onhover={onHover === 'about-us' ? 'rgba(21, 194, 202, 0.3)' : 'rgba(255, 255, 255, 0.2)'}
+                onMouseOver={() => setOnHover('about-us')}
+                onMouseOut={() => setOnHover('')}
+                onFocus={() => setOnHover('about-us')}
+                onBlur={() => setOnHover('')}
               />
             </Link>
           </S.GridItemImg>
           <S.GridItemImg backgroundUrl="../static/images/fab_01.png">
             <Link href="/fablab">
               <S.GridItemA
-                onHover={onHover === "fablab"}
-                onMouseOver={() => setOnHover("fablab")}
-                onMouseOut={() => setOnHover("")}
+                onhover={onHover === 'fablab' ? 'rgba(21, 194, 202, 0.3)' : 'transparent'}
+                onMouseOver={() => setOnHover('fablab')}
+                onMouseOut={() => setOnHover('')}
+                onFocus={() => setOnHover('fablab')}
+                onBlur={() => setOnHover('')}
               >
                 FABLAB
               </S.GridItemA>
@@ -303,29 +308,35 @@ export const GridNav = () => {
           <S.GridItemImg backgroundUrl="../static/images/fab_02.png">
             <Link href="/fablab">
               <S.GridItemA
-                onHover={onHover === "fablab"}
-                onMouseOver={() => setOnHover("fablab")}
-                onMouseOut={() => setOnHover("")}
+                onhover={onHover === 'fablab' ? 'rgba(21, 194, 202, 0.3)' : 'transparent'}
+                onMouseOver={() => setOnHover('fablab')}
+                onMouseOut={() => setOnHover('')}
+                onFocus={() => setOnHover('fablab')}
+                onBlur={() => setOnHover('')}
               />
             </Link>
           </S.GridItemImg>
           <S.GridItemImg backgroundUrl="../static/images/comm_02.png">
             <Link href="/community-programs">
-              <S.GridItemAWhite
-                onHover={onHover === "community-programs"}
-                onMouseOver={() => setOnHover("community-programs")}
-                onMouseOut={() => setOnHover("")}
+              <S.GridItemA
+                onhover={onHover === 'community-programs' ? 'rgba(21, 194, 202, 0.3)' : 'rgba(255, 255, 255, 0.2)'}
+                onMouseOver={() => setOnHover('community-programs')}
+                onMouseOut={() => setOnHover('')}
+                onFocus={() => setOnHover('community-programs')}
+                onBlur={() => setOnHover('')}
               >
                 COMMUNITY PROGRAMS
-              </S.GridItemAWhite>
+              </S.GridItemA>
             </Link>
           </S.GridItemImg>
           <S.GridItemImg backgroundUrl="../static/images/comm_03.png">
             <Link href="/community-programs">
-              <S.GridItemAWhite
-                onHover={onHover === "community-programs"}
-                onMouseOver={() => setOnHover("community-programs")}
-                onMouseOut={() => setOnHover("")}
+              <S.GridItemA
+                onhover={onHover === 'community-programs' ? 'rgba(21, 194, 202, 0.3)' : 'rgba(255, 255, 255, 0.2)'}
+                onMouseOver={() => setOnHover('community-programs')}
+                onMouseOut={() => setOnHover('')}
+                onFocus={() => setOnHover('community-programs')}
+                onBlur={() => setOnHover('')}
               />
             </Link>
           </S.GridItemImg>
@@ -334,18 +345,22 @@ export const GridNav = () => {
           <S.GridItem color={Colors.black}>
             <Link href="/education">
               <S.GridItemA
-                onHover={onHover === "education"}
-                onMouseOver={() => setOnHover("education")}
-                onMouseOut={() => setOnHover("")}
+                onhover={onHover === 'education' ? 'rgba(21, 194, 202, 0.3)' : 'transparent'}
+                onMouseOver={() => setOnHover('education')}
+                onMouseOut={() => setOnHover('')}
+                onFocus={() => setOnHover('education')}
+                onBlur={() => setOnHover('')}
               />
             </Link>
           </S.GridItem>
           <S.GridItem color={Colors.black}>
             <Link href="/education">
               <S.GridItemA
-                onHover={onHover === "education"}
-                onMouseOver={() => setOnHover("education")}
-                onMouseOut={() => setOnHover("")}
+                onhover={onHover === 'education' ? 'rgba(21, 194, 202, 0.3)' : 'transparent'}
+                onMouseOver={() => setOnHover('education')}
+                onMouseOut={() => setOnHover('')}
+                onFocus={() => setOnHover('education')}
+                onBlur={() => setOnHover('')}
               >
                 EDUCATION
               </S.GridItemA>
@@ -354,27 +369,33 @@ export const GridNav = () => {
           <S.GridItemImg backgroundUrl="../static/images/fab_03.png">
             <Link href="/fablab">
               <S.GridItemA
-                onHover={onHover === "fablab"}
-                onMouseOver={() => setOnHover("fablab")}
-                onMouseOut={() => setOnHover("")}
+                onhover={onHover === 'fablab' ? 'rgba(21, 194, 202, 0.3)' : 'transparent'}
+                onMouseOver={() => setOnHover('fablab')}
+                onMouseOut={() => setOnHover('')}
+                onFocus={() => setOnHover('fablab')}
+                onBlur={() => setOnHover('')}
               />
             </Link>
           </S.GridItemImg>
           <S.GridItem color={Colors.black}>
             <Link href="/events">
               <S.GridItemA
-                onHover={onHover === "events"}
-                onMouseOver={() => setOnHover("events")}
-                onMouseOut={() => setOnHover("")}
+                onhover={onHover === 'events' ? 'rgba(21, 194, 202, 0.3)' : 'transparent'}
+                onMouseOver={() => setOnHover('events')}
+                onMouseOut={() => setOnHover('')}
+                onFocus={() => setOnHover('events')}
+                onBlur={() => setOnHover('')}
               />
             </Link>
           </S.GridItem>
           <S.GridItem color={Colors.black}>
             <Link href="/events">
               <S.GridItemA
-                onHover={onHover === "events"}
-                onMouseOver={() => setOnHover("events")}
-                onMouseOut={() => setOnHover("")}
+                onhover={onHover === 'events' ? 'rgba(21, 194, 202, 0.3)' : 'transparent'}
+                onMouseOver={() => setOnHover('events')}
+                onMouseOut={() => setOnHover('')}
+                onFocus={() => setOnHover('events')}
+                onBlur={() => setOnHover('')}
               >
                 EVENTS
               </S.GridItemA>
@@ -382,10 +403,12 @@ export const GridNav = () => {
           </S.GridItem>
           <S.GridItemImg backgroundUrl="../static/images/comm_04.png">
             <Link href="/community-programs">
-              <S.GridItemAWhite
-                onHover={onHover === "community-programs"}
-                onMouseOver={() => setOnHover("community-programs")}
-                onMouseOut={() => setOnHover("")}
+              <S.GridItemA
+                onhover={onHover === 'community-programs' ? 'rgba(21, 194, 202, 0.3)' : 'rgba(255, 255, 255, 0.2)'}
+                onMouseOver={() => setOnHover('community-programs')}
+                onMouseOut={() => setOnHover('')}
+                onFocus={() => setOnHover('community-programs')}
+                onBlur={() => setOnHover('')}
               />
             </Link>
           </S.GridItemImg>
@@ -394,36 +417,44 @@ export const GridNav = () => {
           <S.GridItem color={Colors.black}>
             <Link href="/education">
               <S.GridItemA
-                onHover={onHover === "education"}
-                onMouseOver={() => setOnHover("education")}
-                onMouseOut={() => setOnHover("")}
+                onhover={onHover === 'education' ? 'rgba(21, 194, 202, 0.3)' : 'transparent'}
+                onMouseOver={() => setOnHover('education')}
+                onMouseOut={() => setOnHover('')}
+                onFocus={() => setOnHover('education')}
+                onBlur={() => setOnHover('')}
               />
             </Link>
           </S.GridItem>
           <S.GridItemImg backgroundUrl="../static/images/fab_04.png">
             <Link href="/fablab">
               <S.GridItemA
-                onHover={onHover === "fablab"}
-                onMouseOver={() => setOnHover("fablab")}
-                onMouseOut={() => setOnHover("")}
+                onhover={onHover === 'fablab' ? 'rgba(21, 194, 202, 0.3)' : 'transparent'}
+                onMouseOver={() => setOnHover('fablab')}
+                onMouseOut={() => setOnHover('')}
+                onFocus={() => setOnHover('fablab')}
+                onBlur={() => setOnHover('')}
               />
             </Link>
           </S.GridItemImg>
           <S.GridItemImg backgroundUrl="../static/images/fab_05.png">
             <Link href="/fablab">
               <S.GridItemA
-                onHover={onHover === "fablab"}
-                onMouseOver={() => setOnHover("fablab")}
-                onMouseOut={() => setOnHover("")}
+                onhover={onHover === 'fablab' ? 'rgba(21, 194, 202, 0.3)' : 'transparent'}
+                onMouseOver={() => setOnHover('fablab')}
+                onMouseOut={() => setOnHover('')}
+                onFocus={() => setOnHover('fablab')}
+                onBlur={() => setOnHover('')}
               />
             </Link>
           </S.GridItemImg>
-          <S.GridItem color={onHover === "request" ? Colors.blue : Colors.grey}>
+          <S.GridItem color={onHover === 'request' ? Colors.blue : Colors.grey}>
             <Link href="/request">
               <S.GridItemA
-                onHover={onHover === "request"}
-                onMouseOver={() => setOnHover("request")}
-                onMouseOut={() => setOnHover("")}
+                onhover={onHover === 'request' ? 'rgba(21, 194, 202, 0.3)' : 'transparent'}
+                onMouseOver={() => setOnHover('request')}
+                onMouseOut={() => setOnHover('')}
+                onFocus={() => setOnHover('request')}
+                onBlur={() => setOnHover('')}
               >
                 REQUEST
               </S.GridItemA>
@@ -432,18 +463,22 @@ export const GridNav = () => {
           <S.GridItem color={Colors.black}>
             <Link href="/events">
               <S.GridItemA
-                onHover={onHover === "events"}
-                onMouseOver={() => setOnHover("events")}
-                onMouseOut={() => setOnHover("")}
+                onhover={onHover === 'events' ? 'rgba(21, 194, 202, 0.3)' : 'transparent'}
+                onMouseOver={() => setOnHover('events')}
+                onMouseOut={() => setOnHover('')}
+                onFocus={() => setOnHover('events')}
+                onBlur={() => setOnHover('')}
               />
             </Link>
           </S.GridItem>
-          <S.GridItem color={onHover === "contact" ? Colors.blue : Colors.red}>
+          <S.GridItem color={onHover === 'contact' ? Colors.blue : Colors.red}>
             <Link href="/contact">
               <S.GridItemA
-                onHover={onHover === "contact"}
-                onMouseOver={() => setOnHover("contact")}
-                onMouseOut={() => setOnHover("")}
+                onhover={onHover === 'contact' ? 'rgba(21, 194, 202, 0.3)' : 'transparent'}
+                onMouseOver={() => setOnHover('contact')}
+                onMouseOut={() => setOnHover('')}
+                onFocus={() => setOnHover('contact')}
+                onBlur={() => setOnHover('')}
               >
                 CONTACT
               </S.GridItemA>
@@ -455,55 +490,53 @@ export const GridNav = () => {
   );
 };
 
-export const GridMobileNav = () => {
-  return (
-    <S.GridMobile>
-      <Link href="/about-us">
-        <S.GridMobileA backgroundUrl="../static/images/about.png" filter>
-          ABOUT
-        </S.GridMobileA>
-      </Link>
+export const GridMobileNav = () => (
+  <S.GridMobile>
+    <Link href="/about-us">
+      <S.GridMobileA backgroundUrl="../static/images/about.png" filter="true">
+        ABOUT
+      </S.GridMobileA>
+    </Link>
 
-      <Link href="/our-work">
-        <S.GridMobileA backgroundUrl="../static/images/projects.png" filter>
-          OUR WORK
-        </S.GridMobileA>
-      </Link>
+    <Link href="/our-work">
+      <S.GridMobileA backgroundUrl="../static/images/projects.png" filter="true">
+        OUR WORK
+      </S.GridMobileA>
+    </Link>
 
-      <Link href="/education">
-        <S.GridMobileA backgroundUrl="../static/images/design.png" filter>
-          EDUCATION
-        </S.GridMobileA>
-      </Link>
+    <Link href="/education">
+      <S.GridMobileA backgroundUrl="../static/images/design.png" filter="true">
+        EDUCATION
+      </S.GridMobileA>
+    </Link>
 
-      <Link href="/fablab">
-        <S.GridMobileA backgroundUrl="../static/images/fab.png" filter>
-          FABLAB
-        </S.GridMobileA>
-      </Link>
+    <Link href="/fablab">
+      <S.GridMobileA backgroundUrl="../static/images/fab.png" filter="true">
+        FABLAB
+      </S.GridMobileA>
+    </Link>
 
-      <Link href="/community-programs">
-        <S.GridMobileA backgroundUrl="../static/images/comm.png" filter>
-          COMMUNITY PROGRAMS
-        </S.GridMobileA>
-      </Link>
+    <Link href="/community-programs">
+      <S.GridMobileA backgroundUrl="../static/images/comm.png" filter="true">
+        COMMUNITY PROGRAMS
+      </S.GridMobileA>
+    </Link>
 
-      <Link href="/events">
-        <S.GridMobileA
-          backgroundUrl="../static/images/entrepeneurship.png"
-          filter
-        >
-          EVENTS
-        </S.GridMobileA>
-      </Link>
+    <Link href="/events">
+      <S.GridMobileA
+        backgroundUrl="../static/images/entrepeneurship.png"
+        filter="true"
+      >
+        EVENTS
+      </S.GridMobileA>
+    </Link>
 
-      <Link href="/request">
-        <S.GridMobileA>REQUEST</S.GridMobileA>
-      </Link>
+    <Link href="/request">
+      <S.GridMobileA>REQUEST</S.GridMobileA>
+    </Link>
 
-      <Link href="/contact">
-        <S.GridMobileA color={Colors.red}>CONTACT</S.GridMobileA>
-      </Link>
-    </S.GridMobile>
-  );
-};
+    <Link href="/contact">
+      <S.GridMobileA color={Colors.red}>CONTACT</S.GridMobileA>
+    </Link>
+  </S.GridMobile>
+);
