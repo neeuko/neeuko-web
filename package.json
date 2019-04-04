@@ -15,9 +15,13 @@
   "author": "Lenny Mendez <mendezlenny@gmail.com>",
   "license": "ISC",
   "dependencies": {
+    "@sendgrid/mail": "^6.3.1",
     "classnames": "^2.2.6",
     "dotenv": "^7.0.0",
+    "isomorphic-unfetch": "^3.0.0",
     "next": "^8.0.3",
+    "nodemailer": "^5.1.1",
+    "nodemailer-sendgrid-transport": "^0.2.0",
     "prop-types": "^15.6.2",
     "react": "^16.8.5",
     "react-animate-on-scroll": "^2.1.5",
@@ -33,6 +37,7 @@
     "@storybook/addon-links": "^4.1.11",
     "@storybook/addons": "^4.1.11",
     "@storybook/react": "^4.1.11",
+    "@symfony/webpack-encore": "^0.24.0",
     "babel-loader": "^8.0.5",
     "babel-plugin-styled-components": "^1.10.0",
     "eslint": "^5.13.0",
@@ -41,9 +46,8 @@
     "eslint-plugin-jsx-a11y": "^6.2.1",
     "eslint-plugin-react": "^7.12.4",
     "eslint-plugin-react-hooks": "^1.0.1",
-    "preact": "^8.4.2"
-  },
-  "engines": {
-    "node": ">= 11.9.0"
+    "file": "^0.2.2",
+    "preact": "^8.4.2",
+    "system": "^2.0.1"
   }
 }

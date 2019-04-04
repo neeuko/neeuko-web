@@ -177,19 +177,11 @@ export const Hamburger = () => {
               return <br key={index.toString()} />;
             }
             return (
-              <H1
+              <S.TextRotate
                 key={index.toString()}
-                color={activeHamburger ? Colors.black : Colors.white}
-                style={{
-                  transform: 'rotate(90deg)',
-                  width: '14pt',
-                  margin: '-9.3pt',
-                  position: 'relative',
-                  left: '12pt',
-                }}
-              >
+                color={activeHamburger ? Colors.black : Colors.white}>
                 {string}
-              </H1>
+              </S.TextRotate>
             );
           })}
         </S.VerticalBtn>

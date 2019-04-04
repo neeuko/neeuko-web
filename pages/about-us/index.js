@@ -4,6 +4,7 @@ import ScrollAnimation from 'react-animate-on-scroll';
 import * as S from '../../lib/styles';
 import Spacing from '../../lib/spacing';
 import { H2, P } from '../../lib/typography';
+import Animations from '../../lib/animations';
 
 import Layout from '../../components/layout';
 
@@ -27,7 +28,7 @@ const About = () => {
   return (
     <Layout hamburger>
       <S.LargeContainer>
-        <ScrollAnimation animateIn="fadeIn">
+        <ScrollAnimation animateIn={Animations.fadingEntrances.fadeIn}>
           <S.TitleBody>
             <H2 marginBottom={Spacing.md} textAlign="center">
               WHO WE ARE

@@ -1,8 +1,10 @@
 import React from 'react';
-import Layout from '../../components/layout';
+
 import { H4, P } from '../../lib/typography';
 import * as S from '../../lib/styles';
 import Spacing from '../../lib/spacing';
+
+import Layout from '../../components/layout';
 import { RegularBtn } from '../../components/buttons';
 
 const Events = () => (

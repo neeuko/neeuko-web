@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import ScrollAnimation from 'react-animate-on-scroll';
 
 import * as S from '../../lib/styles';
@@ -7,16 +7,40 @@ import Layout from '../../components/layout';
 import { CTA } from '../../components/buttons';
 
 const Contact = () => {
-  const [initialized, setInitialized] = useState(false);
-  const [emailVal, setEmailVal] = useState('');
-  const [subjectVal, setSubjectVal] = useState('');
-  const [messageVal, setMessageVal] = useState('');
+  const [valueEmail, setValueEmail] = useState('');
+  const [valueSubject, setValueSubject] = useState('');
+  const [valueMessage, setValueMessage] = useState('');
+  const [mailStatus, setMailStatus] = useState(0);
 
-  useEffect(() => {
-    if (!initialized) {
-      setInitialized(true);
+  // SUBMIT REQUEST
+  const submitRequest = async () => {
+    if (valueEmail === '') {
+      setMailStatus(0);
+      return alert('Add a EMAIL');
     }
-  });
+    if (valueSubject === '') {
+      setMailStatus(0);
+      return alert('Add a SUBJECT');
+    }
+    if (valueMessage === '') {
+      setMailStatus(0);
+      return alert('Add a MESSAGE');
+    }
+
+    const options = {
+      method: 'GET',
+    };
+
+    const res = await fetch(`https://send-email.mendezlenny.now.sh?to=neeuko@sagrado.edu&from=${valueEmail}&subject=${valueSubject}&text=${valueMessage}`, options);
+    // CLEAR VALUES
+    // USER INFO
+    setValueEmail('');
+    setValueSubject('');
+    setValueMessage('');
+    // CHECK IF SERVER IS DOWN
+    res.status == 502 && alert('Server seems to be down. Please try later.');
+    return setMailStatus(res.status); // 200 = true, 502 = false
+  };
 
   return (
     <Layout hamburger>
@@ -27,30 +51,26 @@ const Contact = () => {
             <S.InputText
               placeholder="Email"
               type="text"
-              value={emailVal}
-              onChange={e => setEmailVal(e.target.value)}
+              value={valueEmail}
+              onChange={e => setValueEmail(e.target.value)}
             />
             <S.InputText
               placeholder="Subject"
               type="text"
-              value={subjectVal}
-              onChange={e => setSubjectVal(e.target.value)}
+              value={valueSubject}
+              onChange={e => setValueSubject(e.target.value)}
             />
             <S.TextArea
               placeholder="Message"
               type="text-area"
-              value={messageVal}
-              onChange={e => setMessageVal(e.target.value)}
+              value={valueMessage}
+              onChange={e => setValueMessage(e.target.value)}
             />
             <S.BtnContainer>
               <CTA
-                onClick={() => {
-                  setEmailVal('');
-                  setSubjectVal('');
-                  setMessageVal('');
-                }}
+                onClick={() => { setMailStatus(100); submitRequest(); }}
               >
-                SEND MESSAGE
+                {mailStatus == 0 ? 'SEND MESSAGE' : mailStatus == 100 ? 'SENDING...' :  mailStatus == 200 ? 'SENT' : 'MESSAGE FAIL'}
               </CTA>
             </S.BtnContainer>
           </S.LeftBlock>
