@@ -37,85 +37,101 @@ const Request = () => {
 
   // SUBMIT REQUEST
   const submitRequest = async () => {
-    let message = '';
-    // DATE
-    message = message.concat('Date: ', valueDate, ' | ');
-    // TIME
-    message = message.concat('Time: ', valueTime, ' | ');
-    // PHONE
-    message = message.concat('Phone: ', valuePhone, ' | ');
-    // EQUIPMENT
-    valueRoland && (message = message.concat('Requested equipment: Roland - Versa Printer | '));
-    valuePrinter && (message = message.concat('Requested equipment: 3D Printer | '));
-    // SERVICES
-    valueInitial && (message = message.concat('Requested service: Initial consultation | '));
-    valueTechnical && (message = message.concat('Requested service: Technical consultancy | '));
-    valueCreative && (message = message.concat('Requested service: Creative consultancy | '));
-    valueCommercial && (message = message.concat('Requested service: Commercial consultancy | '));
-    valueWalkIn && (message = message.concat('Requested service: Walk-ins | '));
-    valueFab && (message = message.concat('Requested service: Basic FabLab | '));
-    // MEMBERSHIP
-    valueBasic && (message = message.concat('Requested membership: Basic | '));
-    valuePremium && (message = message.concat('Requested membership: Premium | '));
-    valueVIP && (message = message.concat('Requested membership: VIP | '));
-    valueDesign && (message = message.concat('Requested membership: Design offer | '));
-    valueFabrication && (message = message.concat('Requested membership: Fabrication offer | '));
-    valueDesignFabrication && (message = message.concat('Requested membership: Design and Fabrication offer |'));
+    try {
+      let valueMessage = '';
+      // DATE
+      valueMessage = valueMessage.concat('Date: ', valueDate, ' | ');
+      // TIME
+      valueMessage = valueMessage.concat('Time: ', valueTime, ' | ');
+      // PHONE
+      valueMessage = valueMessage.concat('Phone: ', valuePhone, ' | ');
+      // EQUIPMENT
+      valueRoland && (valueMessage = valueMessage.concat('Requested equipment: Roland - Versa Printer | '));
+      valuePrinter && (valueMessage = valueMessage.concat('Requested equipment: 3D Printer | '));
+      // SERVICES
+      valueInitial && (valueMessage = valueMessage.concat('Requested service: Initial consultation | '));
+      valueTechnical && (valueMessage = valueMessage.concat('Requested service: Technical consultancy | '));
+      valueCreative && (valueMessage = valueMessage.concat('Requested service: Creative consultancy | '));
+      valueCommercial && (valueMessage = valueMessage.concat('Requested service: Commercial consultancy | '));
+      valueWalkIn && (valueMessage = valueMessage.concat('Requested service: Walk-ins | '));
+      valueFab && (valueMessage = valueMessage.concat('Requested service: Basic FabLab | '));
+      // MEMBERSHIP
+      valueBasic && (valueMessage = valueMessage.concat('Requested membership: Basic | '));
+      valuePremium && (valueMessage = valueMessage.concat('Requested membership: Premium | '));
+      valueVIP && (valueMessage = valueMessage.concat('Requested membership: VIP | '));
+      valueDesign && (valueMessage = valueMessage.concat('Requested membership: Design offer | '));
+      valueFabrication && (valueMessage = valueMessage.concat('Requested membership: Fabrication offer | '));
+      valueDesignFabrication && (valueMessage = valueMessage.concat('Requested membership: Design and Fabrication offer |'));
 
-    
-    if (valueName === '') {
-      setMailStatus(0);
-      return alert('Add a NAME');
-    }
-    if (valueEmail === '') {
-      setMailStatus(0);
-      return alert('Add a EMAIL');
-    }
-    if (valueTime === '') {
-      setMailStatus(0);
-      return alert('Add a TIME');
-    }
-    if (valueDate === '') {
-      setMailStatus(0);
-      return alert('Add a DATE');
-    }
-    if (message === '') {
-      setMailStatus(0);
-      return alert('Select an EQUIPMENT, SERVICE and/or MEMBERSHIP.');
-    }
+      
+      if (valueName === '') {
+        setMailStatus(0);
+        return alert('Add a NAME');
+      }
+      if (valueEmail === '') {
+        setMailStatus(0);
+        return alert('Add a EMAIL');
+      }
+      if (valueTime === '') {
+        setMailStatus(0);
+        return alert('Add a TIME');
+      }
+      if (valueDate === '') {
+        setMailStatus(0);
+        return alert('Add a DATE');
+      }
+      if (valueMessage === '') {
+        setMailStatus(0);
+        return alert('Select an EQUIPMENT, SERVICE and/or MEMBERSHIP.');
+      }
 
-    const options = {
-      method: 'GET',
-    };
+      const options = {
+        method: 'POST',
+        headers: {
+          'cache-control': 'no-cache',
+          'Content-Type': 'application/json; charset=utf-8',
+          'Access-Control-Allow-Origin': '*',
+        },
+        body: JSON.stringify({
+          to: 'neeuko@sagrado.edu',
+          from: valueEmail,
+          subject: `${valueName.concat(' wants to make a request')}`,
+          message: valueMessage,
+        }),
+      };
 
-    const res = await fetch(`https://send-email.mendezlenny.now.sh?to=neeuko@sagrado.edu&from=${valueEmail}&subject=${valueName.concat(' wants to make a request')}&text=${message}`, options);
-    // CLEAR VALUES
-    // USER INFO
-    setValueName('');
-    setValueEmail('');
-    setValuePhone('');
-    setValueTime('');
-    setValueDate('');
-    // EQUIPMENT
-    setValueRoland(false);
-    setValuePrinter(false);
-    // SERVICES
-    setValueInitial(false);
-    setValueTechnical(false);
-    setValueCreative(false);
-    setValueCommercial(false);
-    setValueWalkIn(false);
-    setValueFab(false);
-    // MEMBERSHIP
-    setValueBasic(false);
-    setValuePremium(false);
-    setValueVIP(false);
-    setValueDesign(false);
-    setValueFabrication(false);
-    setValueDesignFabrication(false);
-    // CHECK IF SERVER IS DOWN
-    res.status == 502 && alert('Server seems to be down. Please try later.');
-    return setMailStatus(res.status); // 200 = true, 502 = false
+      const res = await fetch('https://send-email.mendezlenny.now.sh', options);
+      // CLEAR VALUES
+      // USER INFO
+      setValueName('');
+      setValueEmail('');
+      setValuePhone('');
+      setValueTime('');
+      setValueDate('');
+      // EQUIPMENT
+      setValueRoland(false);
+      setValuePrinter(false);
+      // SERVICES
+      setValueInitial(false);
+      setValueTechnical(false);
+      setValueCreative(false);
+      setValueCommercial(false);
+      setValueWalkIn(false);
+      setValueFab(false);
+      // MEMBERSHIP
+      setValueBasic(false);
+      setValuePremium(false);
+      setValueVIP(false);
+      setValueDesign(false);
+      setValueFabrication(false);
+      setValueDesignFabrication(false);
+      
+      return setMailStatus(res.status); // 200 = true, 502 = false
+    } catch (err) {
+      console.log('Error: ', err);
+      alert('Server seems to be down. Please try later.');
+      setMailStatus(502);
+    }
   };
 
   const countRequest = () => {

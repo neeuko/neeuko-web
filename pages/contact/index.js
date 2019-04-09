@@ -14,32 +14,46 @@ const Contact = () => {
 
   // SUBMIT REQUEST
   const submitRequest = async () => {
-    if (valueEmail === '') {
-      setMailStatus(0);
-      return alert('Add a EMAIL');
+    try {
+      if (valueEmail === '') {
+        setMailStatus(0);
+        return alert('Add a EMAIL');
+      }
+      if (valueSubject === '') {
+        setMailStatus(0);
+        return alert('Add a SUBJECT');
+      }
+      if (valueMessage === '') {
+        setMailStatus(0);
+        return alert('Add a MESSAGE');
+      }
+      const options = {
+        method: 'POST',
+        headers: {
+          'cache-control': 'no-cache',
+          'Content-Type': 'application/json; charset=utf-8',
+          'Access-Control-Allow-Origin': '*',
+        },
+        body: JSON.stringify({
+          to: 'neeuko@sagrado.edu',
+          from: valueEmail,
+          subject: valueSubject,
+          message: valueMessage,
+        }),
+      };
+  
+      const res = await fetch('https://send-email.mendezlenny.now.sh', options);
+      // CLEAR VALUES
+      setValueEmail('');
+      setValueSubject('');
+      setValueMessage('');
+      
+      return setMailStatus(res.status); // 200 = true, 502 = false
+    } catch (err) {
+      console.log('Error: ', err);
+      alert('Server seems to be down. Please try later.');
+      setMailStatus(502);
     }
-    if (valueSubject === '') {
-      setMailStatus(0);
-      return alert('Add a SUBJECT');
-    }
-    if (valueMessage === '') {
-      setMailStatus(0);
-      return alert('Add a MESSAGE');
-    }
-
-    const options = {
-      method: 'GET',
-    };
-
-    const res = await fetch(`https://send-email.mendezlenny.now.sh?to=neeuko@sagrado.edu&from=${valueEmail}&subject=${valueSubject}&text=${valueMessage}`, options);
-    // CLEAR VALUES
-    // USER INFO
-    setValueEmail('');
-    setValueSubject('');
-    setValueMessage('');
-    // CHECK IF SERVER IS DOWN
-    res.status == 502 && alert('Server seems to be down. Please try later.');
-    return setMailStatus(res.status); // 200 = true, 502 = false
   };
 
   return (
