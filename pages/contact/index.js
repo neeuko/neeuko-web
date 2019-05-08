@@ -30,19 +30,17 @@ const Contact = () => {
       const options = {
         method: 'POST',
         headers: {
-          'cache-control': 'no-cache',
-          'Content-Type': 'application/json; charset=utf-8',
-          'Access-Control-Allow-Origin': '*',
+          'Content-Type': 'application/json',
         },
         body: JSON.stringify({
           to: 'neeuko@sagrado.edu',
           from: valueEmail,
           subject: valueSubject,
-          message: valueMessage,
+          text: valueMessage,
         }),
       };
   
-      const res = await fetch('https://send-email.mendezlenny.now.sh', options);
+      const res = await fetch('https://send-email.mendezlenny.now.sh/api', options);
       // CLEAR VALUES
       setValueEmail('');
       setValueSubject('');

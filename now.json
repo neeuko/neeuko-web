@@ -1,5 +1,5 @@
 {
-  "name": "project-00",
+  "name": "neeuko",
   "version": 2,
   "builds": [
     {
@@ -8,7 +8,7 @@
       "config": { "maxLambdaSize": "50mb" }
     }
   ],
-  "alias": ["project-00"],
+  "alias": ["neeuko"],
   "routes": [
     {
       "src": "/(.*)",
