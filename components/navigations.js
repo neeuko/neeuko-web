@@ -16,6 +16,7 @@ export const Hamburger = () => {
   const [subscribeVal, setSubscribeVal] = useState('');
   const [logoHover, setLogoHover] = useState('white');
   const [arrayOfString, setArrayOfString] = useState([]);
+  const [mailStatus, setMailStatus] = useState(0);
 
   const handleOnHamburguerClick = () => {
     if (activeHamburger === false) {
@@ -31,6 +32,37 @@ export const Hamburger = () => {
     const stringToUpperCase = string.toUpperCase();
     const stringToArray = stringToUpperCase.split('');
     return stringToArray;
+  };
+
+  // SUBMIT REQUEST
+  const submitRequest = async () => {
+    try {
+      if (subscribeVal === '') {
+        setMailStatus(0);
+        return alert('Add a proper EMAIL');
+      }
+      const options = {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          email_address: subscribeVal,
+          status: 'subscribed',
+        }),
+      };
+  
+      const res = await fetch('https://subscribe-email.mendezlenny.now.sh/api', options);
+      // CLEAR VALUES
+      setSubscribeVal('');
+      console.log(res.status);
+      
+      return setMailStatus(res.status); // 200 = true, 502 = false
+    } catch (err) {
+      console.log('Error: ', err);
+      alert('Server seems to be down. Please try later.');
+      setMailStatus(502);
+    }
   };
 
   useEffect(() => {
@@ -120,12 +152,30 @@ export const Hamburger = () => {
           </Link>
         </S.HamburgerPages>
         <S.HamburgerFooter>
+
+          {/* <!-- Begin Mailchimp Signup Form -->
+          <div id="mc_embed_signup">
+          <form action="https://sagrado.us20.list-manage.com/subscribe/post?u=6aba1ab0f0559ca5d077a9ede&amp;id=2e86e2568c" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+              <div id="mc_embed_signup_scroll">
+            
+            <input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="email address" required>
+              <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+              <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_6aba1ab0f0559ca5d077a9ede_2e86e2568c" tabindex="-1" value=""></div>
+              <div class="clear"><input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button"></div>
+              </div>
+          </form>
+          </div>
+          <!--End mc_embed_signup--> */}
+
           <H4 color={Colors.white} style={{ marginBottom: Spacing.sm }}>
             SUBSCRIBE:
           </H4>
           <S.InputText
-            type="text"
+            type="email"
+            name="EMAIL"
+            id="mce-EMAIL"
             placeholder="youremail@here.com"
+            required
             color={Colors.blue}
             width="75%"
             value={subscribeVal}
@@ -134,7 +184,8 @@ export const Hamburger = () => {
           <S.InputTextSubmit
             type="submit"
             width="calc(25% - 26pt)"
-            onClick={() => setSubscribeVal('')}
+            value="Submit"
+            onClick={() => submitRequest()}
           >
             <S.InputTextSubmitImg src="../static/icons/send.png" />
           </S.InputTextSubmit>
